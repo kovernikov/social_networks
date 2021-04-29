@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bf6c057a-f8db-422e-9bf8-3e8daa01e1a5" name="Default Changelist" comment="new" />
+    <list id="483e9afe-60f9-411e-9c82-83988e94fec6" name="Revert &quot;lesson_58_mapDispatchToProps лайф-хак&quot;" comment="Revert &quot;lesson_58_mapDispatchToProps лайф-хак&quot;&#10;&#10;This reverts commit ace66524" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="KEEP" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="e6becf88-4c29-47dc-ac01-234eaebb8366" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="groupByToolId" value="true" />
+    <option name="sortByName" value="true" />
+  </component>
+  <component name="ProjectId" id="1uKF5bLIol1pXotonWKh6Tbrk8V" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="ChangesTree.GroupingKeys" value="" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/components/Profile/ProfileInfo" />
+      <recent name="$PROJECT_DIR$/src/redux" />
+      <recent name="$PROJECT_DIR$/src/components/Profile" />
+      <recent name="$PROJECT_DIR$/src/assets/images" />
+    </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/src/components/Users/UsersContainer.tsx" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/utils/validators" />
+      <recent name="$PROJECT_DIR$/src/utils" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/social_networks/src/components/News" />
+      <recent name="$PROJECT_DIR$/src/common/Preloader" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.start">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="deploy" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="eject" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="eject" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="predeploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="predeploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.predeploy" />
+        <item itemvalue="npm.eject" />
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="UTF-8" />
+    <option name="myConnectionType" value="SSH_CONFIG" />
+    <option name="myConnectionId" value="git@github.com:22 agent" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bf6c057a-f8db-422e-9bf8-3e8daa01e1a5" name="Default Changelist" comment="" />
+      <created>1624406192057</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624406192057</updated>
+      <workItem from="1624406193486" duration="637000" />
+      <workItem from="1624407423756" duration="930000" />
+      <workItem from="1624634952470" duration="36000" />
+      <workItem from="1624635224669" duration="783000" />
+      <workItem from="1624643347210" duration="312000" />
+      <workItem from="1624686688008" duration="57000" />
+      <workItem from="1624826680610" duration="10583000" />
+      <workItem from="1625428936484" duration="26078000" />
+      <workItem from="1625685084157" duration="50213000" />
+      <workItem from="1625986621303" duration="180000" />
+      <workItem from="1625986940773" duration="1049000" />
+      <workItem from="1626020645296" duration="393000" />
+      <workItem from="1626021113815" duration="1308000" />
+      <workItem from="1626022892861" duration="14293000" />
+      <workItem from="1626050495759" duration="30000" />
+      <workItem from="1626050569116" duration="8207000" />
+      <workItem from="1626548517065" duration="55790000" />
+      <workItem from="1626807135922" duration="1324000" />
+      <workItem from="1626808787490" duration="12413000" />
+      <workItem from="1627060972021" duration="273000" />
+      <workItem from="1627070784031" duration="286000" />
+      <workItem from="1627075022806" duration="16209000" />
+      <workItem from="1627323016803" duration="21241000" />
+      <workItem from="1627565264039" duration="532000" />
+      <workItem from="1627572674824" duration="1100000" />
+      <workItem from="1627820810832" duration="22379000" />
+      <workItem from="1627939430500" duration="3340000" />
+      <workItem from="1627943876181" duration="3821000" />
+      <workItem from="1627948822151" duration="1559000" />
+      <workItem from="1627968798844" duration="20511000" />
+      <workItem from="1628183107729" duration="405000" />
+      <workItem from="1628350394222" duration="58715000" />
+      <workItem from="1628760104436" duration="926000" />
+      <workItem from="1628973046918" duration="9177000" />
+      <workItem from="1629485142422" duration="16979000" />
+      <workItem from="1635310557733" duration="1696000" />
+      <workItem from="1635578924147" duration="1932000" />
+      <workItem from="1635583888844" duration="761000" />
+      <workItem from="1635584893597" duration="141000" />
+      <workItem from="1635586855862" duration="1105000" />
+      <workItem from="1635588029855" duration="852000" />
+      <workItem from="1635588987550" duration="706000" />
+      <workItem from="1635589701641" duration="383000" />
+      <workItem from="1635590119069" duration="126000" />
+    </task>
+    <task id="LOCAL-00001" summary="lesson_51">
+      <created>1624992406468</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1624992406468</updated>
+    </task>
+    <task id="LOCAL-00002" summary="lesson_52">
+      <created>1625431330873</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1625431330873</updated>
+    </task>
+    <task id="LOCAL-00003" summary="lesson_53">
+      <created>1625441714826</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1625441714827</updated>
+    </task>
+    <task id="LOCAL-00004" summary="lesson_55">
+      <created>1625524154389</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1625524154389</updated>
+    </task>
+    <task id="LOCAL-00005" summary="lesson_56 Презентационная и Контейнерная компоненты">
+      <created>1625745192274</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1625745192274</updated>
+    </task>
+    <task id="LOCAL-00006" summary="lesson_57_Preloader, loader-gif, isFetching">
+      <created>1625836812237</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1625836812237</updated>
+    </task>
+    <task id="LOCAL-00007" summary="lesson_58_mapDispatchToProps лайф-хак">
+      <created>1625862483320</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1625862483320</updated>
+    </task>
+    <task id="LOCAL-00008" summary="lesson_59_profile ajax, api">
+      <created>1626048612569</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1626048612569</updated>
+    </task>
+    <task id="LOCAL-00009" summary="lesson_59_profile_ajax_api">
+      <created>1626048946905</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1626048946905</updated>
+    </task>
+    <task id="LOCAL-00010" summary="lesson_59_profile_ajax_api">
+      <created>1626049244373</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1626049244373</updated>
+    </task>
+    <task id="LOCAL-00011" summary="lesson_59_profile_ajax_api">
+      <created>1626050642012</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1626050642012</updated>
+    </task>
+    <task id="LOCAL-00012" summary="lesson_60">
+      <created>1626212169001</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1626212169001</updated>
+    </task>
+    <task id="LOCAL-00013" summary="lesson_60_fixed">
+      <created>1626240006860</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1626240006860</updated>
+    </task>
+    <task id="LOCAL-00014" summary="lesson_61_login">
+      <created>1626559163544</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1626559163544</updated>
+    </task>
+    <task id="LOCAL-00015" summary="lesson_62">
+      <created>1626636724133</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1626636724133</updated>
+    </task>
+    <task id="LOCAL-00016" summary="lesson_64_button_disabled_(follow\unfollow)">
+      <created>1626643412111</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1626643412111</updated>
+    </task>
+    <task id="LOCAL-00017" summary="lesson_66_redux-thunk">
+      <created>1626738694621</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1626738694621</updated>
+    </task>
+    <task id="LOCAL-00018" summary="lesson_66_redux-thunk">
+      <created>1626809142484</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1626809142484</updated>
+    </task>
+    <task id="LOCAL-00019" summary="lesson_67_redux-thunk">
+      <created>1626905985927</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1626905985927</updated>
+    </task>
+    <task id="LOCAL-00020" summary="lesson_68_redirect">
+      <created>1627204166357</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1627204166358</updated>
+    </task>
+    <task id="LOCAL-00021" summary="lesson_69_HOC">
+      <created>1627243318491</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1627243318492</updated>
+    </task>
+    <task id="LOCAL-00022" summary="lesson_70_compose">
+      <created>1627250674225</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1627250674225</updated>
+    </task>
+    <task id="LOCAL-00023" summary="lesson_71_setState-local-state">
+      <created>1627337546359</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1627337546359</updated>
+    </task>
+    <task id="LOCAL-00024" summary="lesson_72">
+      <created>1627414239577</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1627414239577</updated>
+    </task>
+    <task id="LOCAL-00025" summary="lesson_73_put,_local_state">
+      <created>1627847636466</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1627847636466</updated>
+    </task>
+    <task id="LOCAL-00026" summary="lesson_74_componentDidUpdate">
+      <created>1627932579957</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1627932579957</updated>
+    </task>
+    <task id="LOCAL-00027" summary="lesson_74_componentDidUpdate_">
+      <created>1627946382417</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1627946382418</updated>
+    </task>
+    <task id="LOCAL-00028" summary="lesson_75_redux-form">
+      <created>1628015722161</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1628015722161</updated>
+    </task>
+    <task id="LOCAL-00029" summary="lesson_76_redux-form_dialog">
+      <created>1628056082161</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1628056082161</updated>
+    </task>
+    <task id="LOCAL-00030" summary="lesson_76_redux-form_dialog_D.Z.">
+      <created>1628101018474</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1628101018474</updated>
+    </task>
+    <task id="LOCAL-00031" summary="lesson_77(валидация, ошибки)">
+      <created>1628386579487</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1628386579487</updated>
+    </task>
+    <task id="LOCAL-00032" summary="lesson_78(login и logout api)">
+      <created>1628466576382</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1628466576382</updated>
+    </task>
+    <task id="LOCAL-00033" summary="lesson_79(stopSubmit (redux-form))">
+      <created>1628471346282</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1628471346282</updated>
+    </task>
+    <task id="LOCAL-00034" summary="lesson_80(инициализация приложения)">
+      <created>1628605524499</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1628605524499</updated>
+    </task>
+    <task id="LOCAL-00035" summary="lesson_81(reselect part 1)">
+      <created>1628638755496</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1628638755496</updated>
+    </task>
+    <task id="LOCAL-00036" summary="lesson_82(reselect part 1)">
+      <created>1628980021754</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1628980021754</updated>
+    </task>
+    <task id="LOCAL-00037" summary="lesson_84(hook, useState, хуки)">
+      <created>1629148765258</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1629148765259</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Revert &quot;Update README.md&quot;&#10;&#10;This reverts commit f4bb23b9">
+      <created>1635587709735</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1635587709735</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Revert &quot;Update README.md&quot;&#10;&#10;This reverts commit f4bb23b9">
+      <created>1635588302762</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1635588302762</updated>
+    </task>
+    <task id="LOCAL-00040" summary="new">
+      <created>1635588458325</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1635588458325</updated>
+    </task>
+    <task id="LOCAL-00041" summary="new">
+      <created>1635589079593</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1635589079593</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="LONG_EDGES_VISIBLE" value="true" />
+              <option name="BEK_SORT_TYPE" value="1" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="TEXT_FILTER_SETTINGS">
+                <TextFilterSettings>
+                  <option name="REGEX" value="true" />
+                </TextFilterSettings>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/main" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/gh-pages" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="lesson_61_login" />
+    <MESSAGE value="lesson_62" />
+    <MESSAGE value="lesson_64_button_disabled_(follow\unfollow)" />
+    <MESSAGE value="lesson_66_redux-thunk" />
+    <MESSAGE value="lesson_67_redux-thunk" />
+    <MESSAGE value="lesson_68_redirect" />
+    <MESSAGE value="lesson_69_HOC" />
+    <MESSAGE value="lesson_70_compose" />
+    <MESSAGE value="lesson_71_setState-local-state" />
+    <MESSAGE value="lesson_72" />
+    <MESSAGE value="lesson_73_put,_local_state" />
+    <MESSAGE value="lesson_74_componentDidUpdate" />
+    <MESSAGE value="lesson_74_componentDidUpdate_" />
+    <MESSAGE value="lesson_75_redux-form" />
+    <MESSAGE value="lesson_76_redux-form_dialog" />
+    <MESSAGE value="lesson_76_redux-form_dialog_D.Z." />
+    <MESSAGE value="lesson_77(валидация, ошибки)" />
+    <MESSAGE value="lesson_78(login и logout api)" />
+    <MESSAGE value="lesson_79(stopSubmit (redux-form))" />
+    <MESSAGE value="lesson_80(инициализация приложения)" />
+    <MESSAGE value="lesson_81(reselect part 1)" />
+    <MESSAGE value="lesson_82(reselect part 1)" />
+    <MESSAGE value="lesson_84(hook, useState, хуки)" />
+    <MESSAGE value="Revert &quot;Update README.md&quot;&#10;&#10;This reverts commit f4bb23b9" />
+    <MESSAGE value="new" />
+    <option name="LAST_COMMIT_MESSAGE" value="new" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
