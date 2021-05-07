@@ -1,6 +1,7 @@
 .app-wrapper {
 
     width: 1200px;
+    height: 80vh;
     margin: 0 auto;
     display: grid;
 
@@ -10,11 +11,10 @@
 
     grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
-    grid-gap: 10px;
+    /*grid-gap: 10px;*/
 }
+.app-wrapper-content {
+    grid-area: c;
+    background-color: #549cf8;
 
-
-
-
-
-
+}
