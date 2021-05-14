@@ -2,16 +2,19 @@ import React from 'react';
 import s from './Dialog.module.css'
 import Message, {MessageItemProps} from './Message/Message';
 import DialogItem, {DialogItemProps} from './DialogItem/DialogItem';
+import {PostsItemType} from '../../index';
 
 
 
-type DialogsProps = {
+export type DialogsProps = {
+    AppType: Array<PostsItemType>
     DialogsItem: Array<DialogItemProps>
     MessagesItem: Array<MessageItemProps>
 }
 
 
-const Dialogs = (props: DialogsProps) => {
+
+const Dialogs: React.FC<DialogsProps> = (props ) => {
     let dialogs = [
         {id: 1, name: 'Dimych'},
         {id: 2, name: 'Andrey'},
