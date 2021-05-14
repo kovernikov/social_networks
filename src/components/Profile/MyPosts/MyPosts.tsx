@@ -1,28 +1,16 @@
 import React from 'react';
 import s from './MyPosts.module.css';
 import Post, {PostPropsType} from './Post/Post'
+import {PostsItemType} from '../Profile';
+
+type MyPostType = {
+    posts: Array<PostsItemType>
+}
 
 
+const MyPosts = (props: MyPostType) => {
 
-const MyPosts = () => {
-
-    let posts = [
-        {
-            id: 1,
-            message: 'Hi, how are you',
-            likesCount: '12',
-            img: 'https://i.guim.co.uk/img/media/bf7e98bd289d189e5b86d3f406f740368c663a6a/85_0_2544_1527/master/2544.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=98cd2e37e0df5d552473c329d88349ee'
-        },
-        {
-            id: 2,
-            message: 'It\'s my first post',
-            likesCount: '15',
-            img: 'https://i.guim.co.uk/img/media/bf7e98bd289d189e5b86d3f406f740368c663a6a/85_0_2544_1527/master/2544.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=98cd2e37e0df5d552473c329d88349ee'
-        }
-    ]
-
-
-    let postElements = posts.map(p => <Post message={p.message} likesCount={p.likesCount} img={p.img}/>);
+    let postElements = props.posts.map(p => <Post message={p.message} likesCount={p.likesCount} img={p.img}/>);
 
     return (
         <div className={s.postsBlock}>
