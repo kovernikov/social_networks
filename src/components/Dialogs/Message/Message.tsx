@@ -2,7 +2,6 @@ import React from 'react';
 import s from './../Dialog.module.css'
 
 
-
 export type MessageItemProps = {
     message: string
 }

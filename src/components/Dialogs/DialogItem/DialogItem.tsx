@@ -18,6 +18,4 @@ const DialogItem: React.FC<DialogItemProps> = (props) => {
 }
 
 
-
-
 export default DialogItem;

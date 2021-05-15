@@ -12,7 +12,7 @@ export type PostsItemType = {
     img: string
 }
 
-export let posts: Array<PostsItemType> = [
+let posts: Array<PostsItemType> = [
     {
         id: 1,
         message: 'Hi, how are you',
@@ -26,9 +26,38 @@ export let posts: Array<PostsItemType> = [
         img: 'https://i.guim.co.uk/img/media/bf7e98bd289d189e5b86d3f406f740368c663a6a/85_0_2544_1527/master/2544.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=98cd2e37e0df5d552473c329d88349ee'
     }
 ]
+
+export type DialogType = {
+    id: number
+    name: string
+}
+
+let dialogs: Array<DialogType> = [
+    {id: 1, name: 'Dimych'},
+    {id: 2, name: 'Andrey'},
+    {id: 3, name: 'Sveta'},
+    {id: 4, name: 'Sasha'},
+    {id: 5, name: 'Valera'},
+    {id: 6, name: 'Viktor'},
+]
+
+export type MessagesType = {
+    id: number
+    message: string
+}
+
+
+let messages: Array<MessagesType> = [
+    {id: 1, message: 'Hello!!!'},
+    {id: 2, message: 'Haw are you?'},
+    {id: 3, message: 'This is my friend.'},
+    {id: 4, message: 'yo'},
+    {id: 5, message: 'yo'},
+]
+
 ReactDOM.render(
   <React.StrictMode>
-    <App dataApp={posts} />
+    <App dataApp={posts} dialogs={dialogs} messages={messages}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
