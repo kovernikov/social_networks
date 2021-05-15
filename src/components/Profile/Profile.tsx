@@ -2,11 +2,11 @@ import React from 'react';
 import s from './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
-import {PostsItemType} from '../../index';
+import {ProfilePageType, state, StateType} from '../../redux/state';
 
 
 type ProfileType = {
-    dataApp: Array<PostsItemType>
+    stateR: ProfilePageType
 }
 
 const Profile = (props: ProfileType) => {
@@ -15,7 +15,7 @@ const Profile = (props: ProfileType) => {
         <div className={s.content}>
 
             <ProfileInfo/>
-            <MyPosts posts={props.dataApp}/>
+            <MyPosts posts={props.stateR.posts}/>
 
         </div>
     )
