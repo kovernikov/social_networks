@@ -2,15 +2,28 @@ export type PostsItemType = {
     id: number
     message: string
     likesCount: string
-    img: string
 }
-export type DialogType = {
+type DialogType = {
     id: number
     name: string
 }
-export type MessagesType = {
+type MessagesType = {
     id: number
     message: string
+}
+export type IconsType = {
+    id: number
+    img: string
+}
+
+type FriendsType = {
+    id: number
+    name: string
+}
+
+export type SitebarType = {
+    friends: Array<FriendsType>
+    icon: Array<IconsType>
 }
 
 export type ProfilePageType = {
@@ -25,24 +38,16 @@ export type MessagesPageType = {
 export type StateType = {
     profilePage: ProfilePageType
     dialogsPage: MessagesPageType
+    sitebar: SitebarType
 }
-
 
 export let state: StateType = {
     profilePage: {
         posts: [
-            {
-                id: 1,
-                message: 'Hi, how are you',
-                likesCount: '12',
-                img: 'https://i.guim.co.uk/img/media/bf7e98bd289d189e5b86d3f406f740368c663a6a/85_0_2544_1527/master/2544.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=98cd2e37e0df5d552473c329d88349ee'
-            },
-            {
-                id: 2,
-                message: 'It\'s my first post',
-                likesCount: '15',
-                img: 'https://i.guim.co.uk/img/media/bf7e98bd289d189e5b86d3f406f740368c663a6a/85_0_2544_1527/master/2544.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=98cd2e37e0df5d552473c329d88349ee'
-            }
+            {id: 1, message: 'Hi, how are you', likesCount: '12'},
+            {id: 2, message: 'It\'s my first post', likesCount: '15'},
+            {id: 3, message: 'yo', likesCount: '16'},
+            {id: 3, message: 'yo yo yo', likesCount: '17'},
         ],
     },
     dialogsPage: {
@@ -62,4 +67,17 @@ export let state: StateType = {
             {id: 5, message: 'yo'},
         ],
     },
+    sitebar: {
+        friends: [
+            {id: 1, name: 'Andrey'},
+            {id: 2, name: 'Sasha'},
+            {id: 3, name: 'Viktor'},
+        ],
+        icon: [
+            {id: 1, img: 'https://radiustheme.com/demo/html/cirkle/media/team/team_4.jpg'},
+            {id: 2, img: 'https://radiustheme.com/demo/html/cirkle/media/team/team_1.jpg'},
+            {id: 3, img: 'https://radiustheme.com/demo/html/cirkle/media/team/team_2.jpg'},
+            {id: 4, img: 'https://radiustheme.com/demo/html/cirkle/media/team/team_3.jpg'},
+        ]
+    }
 }
