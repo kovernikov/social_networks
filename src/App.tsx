@@ -14,6 +14,7 @@ import Navigation from './components/Navbar/Navigation/Navigation';
 
 export type AppType = {
     appState: StateType
+    appPost: (pastMessage: string) => void
 }
 
 const App: React.FC<AppType> = (props) => {
@@ -24,8 +25,8 @@ const App: React.FC<AppType> = (props) => {
             <Navbar/>
             <div className={'app-wrapper-content'}>
                 <Route path={'/sitbar'} render={() => <Navigation appState={props.appState}/>}/>
-                <Route path={'/dialogs'} render={() => <Dialogs state={props.appState.dialogsPage}/>}/>
-                <Route path={'/profile'} render={() => <Profile state={props.appState.profilePage}/>}/>
+                <Route path={'/dialogs'} render={() => <Dialogs state={props.appState.dialogsPage} appPost={props.appPost}/>}/>
+                <Route path={'/profile'} render={() => <Profile state={props.appState.profilePage} appPost={props.appPost}/>}/>
                 <Route path={'/news'} render={() => <News/>}/>
                 <Route path={'/music'} render={() => <Music/>}/>
                 <Route path={'/setting'} render={() => <Setting/>}/>

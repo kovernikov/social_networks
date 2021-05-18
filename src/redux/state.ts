@@ -1,7 +1,7 @@
 export type PostsItemType = {
     id: number
     message: string
-    likesCount: string
+    likesCount: number
 }
 type DialogType = {
     id: number
@@ -41,13 +41,13 @@ export type StateType = {
     sitebar: SitebarType
 }
 
-export let state: StateType = {
+let state: StateType = {
     profilePage: {
         posts: [
-            {id: 1, message: 'Hi, how are you', likesCount: '12'},
-            {id: 2, message: 'It\'s my first post', likesCount: '15'},
-            {id: 3, message: 'yo', likesCount: '16'},
-            {id: 3, message: 'yo yo yo', likesCount: '17'},
+            {id: 1, message: 'Hi, how are you', likesCount: 12},
+            {id: 2, message: 'It\'s my first post', likesCount: 15},
+            {id: 3, message: 'yo', likesCount: 16},
+            {id: 3, message: 'yo yo yo', likesCount: 17},
         ],
     },
     dialogsPage: {
@@ -81,3 +81,13 @@ export let state: StateType = {
         ]
     }
 }
+
+export let appPost = (pastMessage: string) => {
+    const newPost: PostsItemType = {
+        id: new Date().getTime(),
+        message: pastMessage,
+        likesCount: 0,
+    }
+    state.profilePage.posts.push(newPost);
+}
+export default state;
