@@ -16,7 +16,7 @@ const Profile = (props: ProfileType) => {
         <div className={s.content}>
 
             <ProfileInfo/>
-            <MyPosts posts={props.state.posts} appPost={props.appPost}/>
+            <MyPosts postsData={props.state.postsData} appPost={props.appPost}/>
 
         </div>
     )

@@ -33,9 +33,9 @@ const Dialogs: React.FC<DialogsProps> = (props) => {
             <div className={s.messages}>
                 {messagesElements}
             </div>
-            <div><textarea ref={newMessageElement}></textarea> </div>
-            <div>
-                <button onClick={addMessage}>Send</button> </div>
+            {/*<div><textarea ref={newMessageElement}></textarea> </div>*/}
+            {/*<div>*/}
+            {/*    <button onClick={addMessage}>Send</button> </div>*/}
         </div>
     )
 }

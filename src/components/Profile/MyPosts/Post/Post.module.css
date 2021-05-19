@@ -1,0 +1,14 @@
+
+
+.item {
+    color: green;
+}
+
+.item.active {
+    color: orangered;
+}
+
+.item img {
+    width: 50px;
+    border-radius: 50%;
+}

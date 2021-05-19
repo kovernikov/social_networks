@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from '../render';
+
 export type PostsItemType = {
     id: number
     message: string
@@ -27,7 +29,7 @@ export type SitebarType = {
 }
 
 export type ProfilePageType = {
-    posts: Array<PostsItemType>
+    postsData: Array<PostsItemType>
 }
 
 export type MessagesPageType = {
@@ -43,7 +45,7 @@ export type StateType = {
 
 let state: StateType = {
     profilePage: {
-        posts: [
+        postsData: [
             {id: 1, message: 'Hi, how are you', likesCount: 12},
             {id: 2, message: 'It\'s my first post', likesCount: 15},
             {id: 3, message: 'yo', likesCount: 16},
@@ -88,6 +90,8 @@ export let appPost = (pastMessage: string) => {
         message: pastMessage,
         likesCount: 0,
     }
-    state.profilePage.posts.push(newPost);
+    state.profilePage.postsData.push(newPost);
+
+    rerenderEntireTree(state);
 }
 export default state;
