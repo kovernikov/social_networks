@@ -14,7 +14,8 @@ import Navigation from './components/Navbar/Navigation/Navigation';
 
 export type AppType = {
     appState: StateType
-    appPost: (pastMessage: string) => void
+    appPost: () => void
+    updateNewPostText:(newText: string) => void
 }
 
 const App: React.FC<AppType> = (props) => {
@@ -28,7 +29,7 @@ const App: React.FC<AppType> = (props) => {
                 <Route path={'/dialogs'}
                        render={() => <Dialogs state={props.appState.dialogsPage} appPost={props.appPost}/>}/>
                 <Route path={'/profile'}
-                       render={() => <Profile state={props.appState.profilePage} appPost={props.appPost}/>}/>
+                       render={() => <Profile profilePage={props.appState.profilePage} appPost={props.appPost} updateNewPostText={props.updateNewPostText}/>}/>
                 <Route path={'/news'} render={() => <News/>}/>
                 <Route path={'/music'} render={() => <Music/>}/>
                 <Route path={'/setting'} render={() => <Setting/>}/>

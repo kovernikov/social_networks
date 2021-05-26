@@ -30,6 +30,7 @@ export type SitebarType = {
 
 export type ProfilePageType = {
     postsData: Array<PostsItemType>
+    newPostText: string
 }
 
 export type MessagesPageType = {
@@ -51,6 +52,7 @@ let state: StateType = {
             {id: 3, message: 'yo', likesCount: 16},
             {id: 3, message: 'yo yo yo', likesCount: 17},
         ],
+        newPostText: 'it-kamasutra.com'
     },
     dialogsPage: {
         dialogs: [
@@ -84,14 +86,23 @@ let state: StateType = {
     }
 }
 
-export let appPost = (pastMessage: string) => {
+
+
+export let appPost = () => {
     const newPost: PostsItemType = {
         id: new Date().getTime(),
-        message: pastMessage,
+        message: state.profilePage.newPostText,
         likesCount: 0,
     }
     state.profilePage.postsData.push(newPost);
+    state.profilePage.newPostText = ''; /*очищает поле ввода после добавления поста*/
+    rerenderEntireTree(state);
+}
+
+export let updateNewPostText = (newText: string) => {    /*the function adds a value to the state that comes from the textarea*/
+    state.profilePage.newPostText = newText;
 
     rerenderEntireTree(state);
 }
+
 export default state;
