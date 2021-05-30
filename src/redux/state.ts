@@ -1,24 +1,29 @@
-import {rerenderEntireTree} from '../render';
+let onChange = (state:StateType) => {
+    console.log("State changed");
+}
 
 export type PostsItemType = {
     id: number
     message: string
     likesCount: number
 }
+
 type DialogType = {
     id: number
     name: string
 }
+
 type MessagesType = {
     id: number
     message: string
 }
+
 export type IconsType = {
     id: number
     img: string
 }
 
-type FriendsType = {
+export type FriendsType = {
     id: number
     name: string
 }
@@ -86,9 +91,7 @@ let state: StateType = {
     }
 }
 
-
-
-export let appPost = () => {
+export const appPost = () => {
     const newPost: PostsItemType = {
         id: new Date().getTime(),
         message: state.profilePage.newPostText,
@@ -96,13 +99,16 @@ export let appPost = () => {
     }
     state.profilePage.postsData.push(newPost);
     state.profilePage.newPostText = ''; /*очищает поле ввода после добавления поста*/
-    rerenderEntireTree(state);
+    onChange(state);
 }
 
-export let updateNewPostText = (newText: string) => {    /*the function adds a value to the state that comes from the textarea*/
+export const updateNewPostText = (newText: string) => {    /*the function adds a value to the state that comes from the textarea*/
     state.profilePage.newPostText = newText;
+    onChange(state);
+}
 
-    rerenderEntireTree(state);
+export const subscribe = (observer: (state: StateType) => void) => {
+    onChange = observer
 }
 
 export default state;

@@ -1,17 +1,16 @@
 import React from 'react';
 import s from './Friends.module.css';
 import {SitebarType} from '../../../redux/state';
+import Message from '../../Dialogs/Message/Message';
 
 type FriendTypeProps = {
     photo: SitebarType
-
-
 }
 
-const Friends: React.FC<FriendTypeProps> = (props) => {
+const MyFriends: React.FC<FriendTypeProps> = (props) => {
 
-    // let friendsElements = props.photo.icon.map(f => <Friends icon={f.img} id={f.id}/>);
-    // let messagesElements = props.state.messages.map(m => <Message name={m.name}/>);
+    // let friendsElements = props.photo.icon.map(f => <Friends key={f.id}/>);
+    // let messagesElements = props.messages.map(m => <Message name={m.name}/>);
 
     return (
       <div>
@@ -25,4 +24,4 @@ const Friends: React.FC<FriendTypeProps> = (props) => {
     )
 }
 
-export default Friends;
+export default MyFriends;
