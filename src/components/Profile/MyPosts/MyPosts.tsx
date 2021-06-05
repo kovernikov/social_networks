@@ -1,14 +1,13 @@
 import React, {ChangeEvent} from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post'
-import {PostsItemType} from '../../../redux/state';
+import {ActionsTypes, PostsItemType} from '../../../redux/state';
 
 
 type MyPostType = {
     postsData: Array<PostsItemType>
-    appPost: (newPostText: string) => void
     newPostText: string
-    updateNewPostText: (newText: string) => void
+    dispatch: (action: ActionsTypes) => void
 }
 
 
@@ -20,7 +19,9 @@ const MyPosts = (props: MyPostType) => {
 
     let addPost = () => {   /*добавляет пост*/
         if (newPostElement.current) {
-            props.appPost('');
+            // props.appPost('');
+            let action: ActionsTypes = {type: 'ADD-POST', newPostText: props.newPostText};
+            props.dispatch(action)
             /*props.updateNewPostText('')*/ /*очищает поле ввода после добавления поста*/
         }
     }
@@ -32,7 +33,9 @@ const MyPosts = (props: MyPostType) => {
     // }
 
     const onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        props.updateNewPostText(e.currentTarget?.value);
+        // props.updateNewPostText(e.currentTarget?.value);
+        let text = e.currentTarget?.value;
+        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text })
     }
     //     обработчик принимает событие event
     //     типизируем event - ChangeEvent - внутри типизируем на какой элемент событие прилетает

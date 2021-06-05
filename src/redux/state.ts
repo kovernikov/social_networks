@@ -1,5 +1,3 @@
-
-
 export type PostsItemType = {
     id: number
     message: string
@@ -48,8 +46,6 @@ export type StateType = {
 }
 
 
-
-
 export  type StoreType = {
     _state: StateType
     updateNewPostText: (newText: string) => void
@@ -57,7 +53,19 @@ export  type StoreType = {
     _onChange: () => void
     subscribe: (observer: () => void) => void
     getState: () => StateType
+    dispatch: (action: ActionsTypes) => void
 }
+
+type AddPostActionType = {
+    type: 'ADD-POST'
+    newPostText: string
+}
+type ChangeNewTextActionType = {
+    type: 'UPDATE-NEW-POST-TEXT'
+    newText: string
+}
+
+export type ActionsTypes = AddPostActionType | ChangeNewTextActionType
 
 const store: StoreType = {
     _state: {
@@ -65,7 +73,6 @@ const store: StoreType = {
             postsData: [
                 {id: 1, message: 'Hi, how are you', likesCount: 12},
                 {id: 2, message: 'It\'s my first post', likesCount: 15},
-                {id: 3, message: 'yo', likesCount: 16},
                 {id: 3, message: 'yo yo yo', likesCount: 17},
             ],
             newPostText: 'it-kamasutra.com'
@@ -101,13 +108,22 @@ const store: StoreType = {
             ]
         }
     },
+    _onChange() {
+        console.log('State changed');
+    },
+
+    subscribe(observer) {
+        this._onChange = observer
+    },
+    getState() {
+        return this._state;
+    },
 
     updateNewPostText(newText: string) {
         this._state.profilePage.newPostText = newText
         this._onChange()
         /*the function adds a value to the state that comes from the textarea*/
     },
-
     appPost(newPostText: string) {
         const newPost: PostsItemType = {
             id: new Date().getTime(),
@@ -118,17 +134,23 @@ const store: StoreType = {
         this._state.profilePage.newPostText = ''; /*очищает поле ввода после добавления поста*/
         this._onChange();
     },
-
-    subscribe(observer) {
-        this._onChange = observer
-    },
-
-    _onChange() {
-        console.log('State changed');
-    },
-    getState() {
-        return this._state;
+    dispatch(action) {
+        debugger
+        if (action.type === 'ADD-POST') {
+            const newPost: PostsItemType = {
+                id: new Date().getTime(),
+                message: action.newPostText,
+                likesCount: 0,
+            }
+            this._state.profilePage.postsData.push(newPost);
+            this._state.profilePage.newPostText = ''; /*очищает поле ввода после добавления поста*/
+            this._onChange();
+        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._state.profilePage.newPostText = action.newText
+            this._onChange()
+        }
     }
-}
 
-export default store;
+    }
+
+    export default store;

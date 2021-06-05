@@ -2,13 +2,13 @@ import React from 'react';
 import s from './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
-import {ProfilePageType} from '../../redux/state';
+import {ActionsTypes, ProfilePageType} from '../../redux/state';
 
 
 type ProfileType = {
     profilePage: ProfilePageType
-    appPost: (newPostText: string) => void
-    updateNewPostText: (newText: string) => void
+    dispatch: (action: ActionsTypes) => void
+
     newPostText: string
 }
 
@@ -18,7 +18,7 @@ const Profile = (props: ProfileType) => {
         <div className={s.content}>
 
             <ProfileInfo/>
-            <MyPosts postsData={props.profilePage.postsData} newPostText={props.profilePage.newPostText} appPost={props.appPost} updateNewPostText={props.updateNewPostText}/>
+            <MyPosts postsData={props.profilePage.postsData} newPostText={props.profilePage.newPostText} dispatch={props.dispatch} />
 
         </div>
     )

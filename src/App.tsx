@@ -30,8 +30,7 @@ const App: React.FC<AppPropsType> = (props) => {
                                               appPost={props.store.appPost.bind(props.store)}/>}/>
                 <Route path={'/profile'}
                        render={() => <Profile profilePage={state.profilePage}
-                                              appPost={props.store.appPost.bind(props.store)}
-                                              updateNewPostText={store.updateNewPostText.bind(props.store)}
+                                              dispatch={props.store.dispatch.bind(props.store)}
                                               newPostText={store._state.profilePage.newPostText}/>}/>
                 <Route path={'/news'} render={() => <News/>}/>
                 <Route path={'/music'} render={() => <Music/>}/>
