@@ -2,12 +2,13 @@ import React from 'react';
 import s from './Dialog.module.css'
 import Message from './Message/Message';
 import DialogItem from './DialogItem/DialogItem';
-import {MessagesPageType} from '../../redux/state';
+import {ActionsTypes, MessagesPageType} from '../../redux/state';
+import {type} from 'os';
 
 
 export type DialogsProps = {
     state: MessagesPageType
-    appPost: (pastMessage: string) => void
+    dispatch: (action: ActionsTypes) => void
 
 }
 
@@ -21,7 +22,7 @@ const Dialogs: React.FC<DialogsProps> = (props) => {
 
     let addMessage = () => {
         let text = newMessageElement.current ? newMessageElement.current.value : '-----';
-        props.appPost(text)
+        props.dispatch({type: 'ADD-POST', newPostText: text} )
     }
 
     return (

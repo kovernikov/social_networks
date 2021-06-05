@@ -27,7 +27,7 @@ const App: React.FC<AppPropsType> = (props) => {
                 {/*<Route path={'/sitbar'} render={() => <Navigation appState={props.appState}/>}/>*/}
                 <Route path={'/dialogs'}
                        render={() => <Dialogs state={state.dialogsPage}
-                                              appPost={props.store.appPost.bind(props.store)}/>}/>
+                                              dispatch={props.store.dispatch.bind(props.store)}/>}/>
                 <Route path={'/profile'}
                        render={() => <Profile profilePage={state.profilePage}
                                               dispatch={props.store.dispatch.bind(props.store)}
