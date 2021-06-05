@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import s from './Dialog.module.css'
 import Message from './Message/Message';
 import DialogItem from './DialogItem/DialogItem';
-import {ActionsTypes, MessagesPageType} from '../../redux/state';
+import {ActionsTypes, MessagesPageType, sendMessageAC, updateNewMessageBodyAC} from '../../redux/state';
 import {type} from 'os';
 
 
@@ -18,11 +18,22 @@ const Dialogs: React.FC<DialogsProps> = (props) => {
     let dialogsElements = props.state.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
     let messagesElements = props.state.messages.map(m => <Message message={m.message}/>);
 
+    let newMessageBody = props.state.newMessageBody;
+
     let newMessageElement = React.createRef<HTMLTextAreaElement>()
 
     let addMessage = () => {
         let text = newMessageElement.current ? newMessageElement.current.value : '-----';
-        props.dispatch({type: 'ADD-POST', newPostText: text} )
+        props.dispatch({type: 'ADD-POST', newPostText: text})
+    }
+
+    let onSendMessageClick = () => {
+        props.dispatch(sendMessageAC())
+    }
+
+    let onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+        let body = e.target.value;
+        props.dispatch(updateNewMessageBodyAC(body))
     }
 
     return (
@@ -32,7 +43,15 @@ const Dialogs: React.FC<DialogsProps> = (props) => {
 
             </div>
             <div className={s.messages}>
-                {messagesElements}
+                <div>{messagesElements}</div>
+                <div>
+                    <div><textarea value={newMessageBody}
+                                   onChange={onNewMessageChange}
+                                   placeholder="Enter your message"></textarea></div>
+                    <div>
+                        <button onClick={onSendMessageClick}> Sent</button>
+                    </div>
+                </div>
             </div>
             {/*<div><textarea ref={newMessageElement}></textarea> </div>*/}
             {/*<div>*/}

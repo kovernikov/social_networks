@@ -1,5 +1,7 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
+const SEND_MESSAGE = 'SEND-MESSAGE ';
 
 export type PostsItemType = {
     id: number
@@ -40,6 +42,7 @@ export type ProfilePageType = {
 export type MessagesPageType = {
     dialogs: Array<DialogType>
     messages: Array<MessagesType>
+    newMessageBody: string
 }
 
 export type StateType = {
@@ -59,7 +62,7 @@ export  type StoreType = {
     dispatch: (action: ActionsTypes) => void
 }
 
-export type ActionsTypes = ReturnType<typeof addPostAC> | ReturnType<typeof changeNewTextAC>
+export type ActionsTypes = ReturnType<typeof addPostAC> | ReturnType<typeof changeNewTextAC> | ReturnType<typeof updateNewMessageBodyAC> | ReturnType<typeof sendMessageAC>
 
 export const addPostAC = (newPostText: string) => {
     return {
@@ -71,6 +74,17 @@ export const changeNewTextAC = (newText: string) => {
     return {
         type: UPDATE_NEW_POST_TEXT,
         newText: newText
+    } as const
+}
+export const updateNewMessageBodyAC = (body: string) => {
+    return {
+        type: UPDATE_NEW_MESSAGE_BODY,
+        body: body
+    } as const
+}
+export const sendMessageAC = () => {
+    return {
+        type: SEND_MESSAGE,
     } as const
 }
 
@@ -100,6 +114,7 @@ const store: StoreType = {
                 {id: 4, message: 'yo'},
                 {id: 5, message: 'yo'},
             ],
+            newMessageBody: ''
         },
         sitebar: {
             friends: [
@@ -154,6 +169,14 @@ const store: StoreType = {
         } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profilePage.newPostText = action.newText
             this._onChange()
+        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._state.dialogsPage.newMessageBody = action.body;
+            this._onChange();
+        }else if (action.type === SEND_MESSAGE) {
+            let body = this._state.dialogsPage.newMessageBody;
+            this._state.dialogsPage.newMessageBody = '';
+            this._state.dialogsPage.messages.push({id: 6, message: body});
+            this._onChange();
         }
     }
 
