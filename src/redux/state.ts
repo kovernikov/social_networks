@@ -1,7 +1,6 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
-const SEND_MESSAGE = 'SEND-MESSAGE ';
+import profileReducer, {addPostAC, changeNewTextAC} from './profileReducer';
+import dialogsReducer, {sendMessageAC, updateNewMessageBodyAC} from './dialogsReducer';
+import sidebarReducer from './sidebarReducer';
 
 export type PostsItemType = {
     id: number
@@ -48,45 +47,22 @@ export type MessagesPageType = {
 export type StateType = {
     profilePage: ProfilePageType
     dialogsPage: MessagesPageType
-    sitebar: SitebarType
+    sidebar: SitebarType
 }
-
 
 export  type StoreType = {
     _state: StateType
-    // updateNewPostText: (newText: string) => void
-    // appPost: (newPostText: string) => void
     _onChange: () => void
     subscribe: (observer: () => void) => void
     getState: () => StateType
     dispatch: (action: ActionsTypes) => void
 }
 
-export type ActionsTypes = ReturnType<typeof addPostAC> | ReturnType<typeof changeNewTextAC> | ReturnType<typeof updateNewMessageBodyAC> | ReturnType<typeof sendMessageAC>
-
-export const addPostAC = (newPostText: string) => {
-    return {
-        type: ADD_POST,
-        newPostText: newPostText
-    } as const
-}
-export const changeNewTextAC = (newText: string) => {
-    return {
-        type: UPDATE_NEW_POST_TEXT,
-        newText: newText
-    } as const
-}
-export const updateNewMessageBodyAC = (body: string) => {
-    return {
-        type: UPDATE_NEW_MESSAGE_BODY,
-        body: body
-    } as const
-}
-export const sendMessageAC = () => {
-    return {
-        type: SEND_MESSAGE,
-    } as const
-}
+export type ActionsTypes =
+    ReturnType<typeof addPostAC>
+    | ReturnType<typeof changeNewTextAC>
+    | ReturnType<typeof updateNewMessageBodyAC>
+    | ReturnType<typeof sendMessageAC>
 
 const store: StoreType = {
     _state: {
@@ -116,7 +92,7 @@ const store: StoreType = {
             ],
             newMessageBody: ''
         },
-        sitebar: {
+        sidebar: {
             friends: [
                 {id: 1, name: 'Andrey'},
                 {id: 2, name: 'Sasha'},
@@ -141,45 +117,15 @@ const store: StoreType = {
         return this._state;
     },
 
-    // updateNewPostText(newText: string) {
-    //     this._state.profilePage.newPostText = newText
-    //     this._onChange()
-    //     /*the function adds a value to the state that comes from the textarea*/
-    // },
-    // appPost(newPostText: string) {
-    //     const newPost: PostsItemType = {
-    //         id: new Date().getTime(),
-    //         message: this._state.profilePage.newPostText,
-    //         likesCount: 0,
-    //     }
-    //     this._state.profilePage.postsData.push(newPost);
-    //     this._state.profilePage.newPostText = ''; /*очищает поле ввода после добавления поста*/
-    //     this._onChange();
-    // },
     dispatch(action) {
-        if (action.type === ADD_POST) {
-            const newPost: PostsItemType = {
-                id: new Date().getTime(),
-                message: action.newPostText,
-                likesCount: 0,
-            }
-            this._state.profilePage.postsData.push(newPost);
-            this._state.profilePage.newPostText = ''; /*очищает поле ввода после добавления поста*/
-            this._onChange();
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.profilePage.newPostText = action.newText
-            this._onChange()
-        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-            this._state.dialogsPage.newMessageBody = action.body;
-            this._onChange();
-        }else if (action.type === SEND_MESSAGE) {
-            let body = this._state.dialogsPage.newMessageBody;
-            this._state.dialogsPage.newMessageBody = '';
-            this._state.dialogsPage.messages.push({id: 6, message: body});
-            this._onChange();
-        }
+
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+
+        this._onChange();
     }
 
-    }
+}
 
-    export default store;
+export default store;

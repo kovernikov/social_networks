@@ -35,7 +35,7 @@ const App: React.FC<AppPropsType> = (props) => {
                 <Route path={'/news'} render={() => <News/>}/>
                 <Route path={'/music'} render={() => <Music/>}/>
                 <Route path={'/setting'} render={() => <Setting/>}/>
-                <Route path={'/friends'} render={() => <Friends photo={store._state.sitebar}/>}/>
+                <Route path={'/friends'} render={() => <Friends photo={store._state.sidebar}/>}/>
             </div>
         </div>
     )
