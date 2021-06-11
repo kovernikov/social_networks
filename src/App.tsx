@@ -7,7 +7,7 @@ import Profile from './components/Profile/Profile';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Setting from './components/Setting/Setting';
-import store, {StateType, StoreType} from './redux/state';
+import store, {StateType, StoreType} from './redux/store';
 import Dialogs from './components/Dialogs/Dialogs';
 import Friends from './components/Navbar/Friends/Friends';
 import Navigation from './components/Navbar/Navigation/Navigation';

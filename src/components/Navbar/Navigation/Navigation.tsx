@@ -1,5 +1,5 @@
 import React from 'react';
-import {StateType} from '../../../redux/state';
+import {StateType} from '../../../redux/store';
 
 export type SitebarTypeProps = {
     appState: StateType
