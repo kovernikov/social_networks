@@ -12,11 +12,11 @@ import Friends from './components/Navbar/Friends/Friends';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 export type AppPropsType = {
-    store: StoreType
+
 }
 
 const App: React.FC<AppPropsType> = (props) => {
-    const state = props.store.getState()
+    // const state = props.store.getState()
 
     return (
         <div className="app-wrapper">
@@ -25,9 +25,9 @@ const App: React.FC<AppPropsType> = (props) => {
             <div className={'app-wrapper-content'}>
                 {/*<Route path={'/sitbar'} render={() => <Navigation appState={props.appState}/>}/>*/}
                 <Route path={'/dialogs'}
-                       render={() => <DialogsContainer store={props.store}/>}/>
+                       render={() => <DialogsContainer />}/>
                 <Route path={'/profile'}
-                       render={() => <Profile store={props.store}/>}/>
+                       render={() => <Profile />}/>
                 <Route path={'/news'} render={() => <News/>}/>
                 <Route path={'/music'} render={() => <Music/>}/>
                 <Route path={'/setting'} render={() => <Setting/>}/>
