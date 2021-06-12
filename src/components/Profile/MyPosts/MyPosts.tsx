@@ -1,14 +1,14 @@
 import React, {ChangeEvent} from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post'
-import {ActionsTypes, PostsItemType} from '../../../redux/store';
-import {addPostAC, changeNewTextAC} from '../../../redux/profileReducer';
+import {PostsItemType} from '../../../redux/store';
 
 
 type MyPostType = {
     postsData: Array<PostsItemType>
+    appPost: (newPostText: string) => void
     newPostText: string
-    dispatch: (action: ActionsTypes) => void
+    updateNewPostText: (newText: string) => void
 }
 
 
@@ -20,8 +20,7 @@ const MyPosts = (props: MyPostType) => {
 
     let addPost = () => {   /*добавляет пост*/
         if (newPostElement.current) {
-            // props.dispatch({type: 'ADD-POST', newPostText: props.newPostText})
-            props.dispatch(addPostAC(props.newPostText))
+            props.appPost('');
             /*props.updateNewPostText('')*/ /*очищает поле ввода после добавления поста*/
         }
     }
@@ -33,10 +32,8 @@ const MyPosts = (props: MyPostType) => {
     // }
 
     const onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        // props.updateNewPostText(e.currentTarget?.value);
-        let text = e.currentTarget?.value;
-        // props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text })
-        props.dispatch(changeNewTextAC(text))
+        props.updateNewPostText(e.currentTarget?.value);
+        // let text = e.currentTarget?.value;
     }
     //     обработчик принимает событие event
     //     типизируем event - ChangeEvent - внутри типизируем на какой элемент событие прилетает

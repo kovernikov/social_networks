@@ -7,10 +7,9 @@ import Profile from './components/Profile/Profile';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Setting from './components/Setting/Setting';
-import store, {StateType, StoreType} from './redux/store';
-import Dialogs from './components/Dialogs/Dialogs';
+import store, {StoreType} from './redux/store';
 import Friends from './components/Navbar/Friends/Friends';
-import Navigation from './components/Navbar/Navigation/Navigation';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 export type AppPropsType = {
     store: StoreType
@@ -26,12 +25,9 @@ const App: React.FC<AppPropsType> = (props) => {
             <div className={'app-wrapper-content'}>
                 {/*<Route path={'/sitbar'} render={() => <Navigation appState={props.appState}/>}/>*/}
                 <Route path={'/dialogs'}
-                       render={() => <Dialogs state={state.dialogsPage}
-                                              dispatch={props.store.dispatch.bind(props.store)}/>}/>
+                       render={() => <DialogsContainer store={props.store}/>}/>
                 <Route path={'/profile'}
-                       render={() => <Profile profilePage={state.profilePage}
-                                              dispatch={props.store.dispatch.bind(props.store)}
-                                              newPostText={store._state.profilePage.newPostText}/>}/>
+                       render={() => <Profile store={props.store}/>}/>
                 <Route path={'/news'} render={() => <News/>}/>
                 <Route path={'/music'} render={() => <Music/>}/>
                 <Route path={'/setting'} render={() => <Setting/>}/>
