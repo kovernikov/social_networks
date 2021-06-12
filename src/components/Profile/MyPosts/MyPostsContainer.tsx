@@ -15,7 +15,7 @@ const MyPostsContainer = (props: MyPostsContainerType) => {
         props.store.dispatch(addPostAC(props.store._state.profilePage.newPostText))
     }
 
-    const onPostChange = (text: any) => {
+    const onPostChange = (text: string) => {
         props.store.dispatch(changeNewTextAC(text))
         // props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text })
         // props.dispatch(changeNewTextAC(text))

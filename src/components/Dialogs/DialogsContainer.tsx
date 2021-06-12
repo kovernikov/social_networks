@@ -15,7 +15,7 @@ const DialogsContainer: React.FC<DialogsContainerPropsType> = (props) => {
         props.store.dispatch(sendMessageAC())
     }
 
-    let onNewMessageChange = (body: any) => {
+    let onNewMessageChange = (body: string) => {
         // let body = e.target.value;
         props.store.dispatch(updateNewMessageBodyAC(body))
     }
