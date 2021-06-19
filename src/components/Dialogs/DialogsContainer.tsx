@@ -4,7 +4,9 @@ import Dialogs from './Dialogs';
 import StoreContext from '../../StoreContext';
 import {StoreType} from '../../redux/store';
 
-export type DialogsContainerPropsType = {}
+export type DialogsContainerPropsType = {
+    store: StoreType
+}
 
 const DialogsContainer: React.FC<DialogsContainerPropsType> = (props) => {
     return (
