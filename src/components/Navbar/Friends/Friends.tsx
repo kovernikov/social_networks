@@ -4,7 +4,7 @@ import {SitebarType} from '../../../redux/store';
 import Message from '../../Dialogs/Message/Message';
 
 type FriendTypeProps = {
-    photo: SitebarType
+    // photo: SitebarType
 }
 
 const MyFriends: React.FC<FriendTypeProps> = (props) => {

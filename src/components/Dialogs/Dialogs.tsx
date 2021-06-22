@@ -2,35 +2,37 @@ import React, {ChangeEvent} from 'react';
 import s from './Dialog.module.css'
 import Message from './Message/Message';
 import DialogItem from './DialogItem/DialogItem';
+import {DialogsPageDataType} from '../../types/types';
+import {initialStateType} from '../../redux/dialogsReducer';
+import {AppStateType} from '../../redux/redux-store';
 import {MessagesPageType} from '../../redux/store';
 
 
-export type DialogsProps = {
-    state: MessagesPageType
+export type DialogsPropsType= {
+    // state: initialStateType
     // appPost: (text: string) => void
     updateNewMessageBody: (body: string) => void
     sendMessage: () => void
+    dialogsPage: MessagesPageType
 }
 
 
-const Dialogs: React.FC<DialogsProps> = (props) => {
+const Dialogs = (props: DialogsPropsType) => {
+    const dialogsElements = props.dialogsPage.dialogs.map(d => <DialogItem name={d.name} key={d.id} id={d.id}/>);
+    // let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
+    const messagesElements = props.dialogsPage.messages.map(m => <Message message={m.message} key={m.id}/>);
+    // let messagesElements = state.messages.map(m => <Message message={m.message}/>);
+    const newMessageBody = props.dialogsPage.newMessageBody;
 
-    let state = props.state
+    // let newMessageElement = React.createRef<HTMLTextAreaElement>()
 
-    let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
-    let messagesElements = state.messages.map(m => <Message message={m.message}/>);
-    let newMessageBody = state.newMessageBody;
-
-    let newMessageElement = React.createRef<HTMLTextAreaElement>()
-
-    let onSendMessageClick = () => {
+    const onSendMessageClick = () => {
         props.sendMessage()
     }
 
-    let onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    const onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         let body = e.target.value;
         props.updateNewMessageBody(body);
-        // props.onNewMessageChange(updateNewMessageBodyAC(body))
     }
 
     return (
@@ -46,7 +48,7 @@ const Dialogs: React.FC<DialogsProps> = (props) => {
                                    onChange={onNewMessageChange}
                                    placeholder="Enter your message"></textarea></div>
                     <div>
-                        <button onClick={props.sendMessage}> Sent</button>
+                        <button onClick={onSendMessageClick}> Sent</button>
                     </div>
                 </div>
             </div>

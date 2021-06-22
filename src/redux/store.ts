@@ -2,7 +2,7 @@ import profileReducer, {addPostAC, changeNewTextAC} from './profileReducer';
 import dialogsReducer, {sendMessageAC, updateNewMessageBodyAC} from './dialogsReducer';
 import sidebarReducer from './sidebarReducer';
 
-export type PostsItemType = {
+type PostsItemType = {
     id: number
     message: string
     likesCount: number
@@ -50,7 +50,7 @@ export type StateType = {
     sidebar: SitebarType
 }
 
-export  type StoreType = {
+type StoreType = {
     _state: StateType
     _onChange: () => void
     subscribe: (observer: () => void) => void
