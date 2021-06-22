@@ -1,6 +1,8 @@
 // import {setUsersAC} from "../redux/usersReducer";
 // import {UserType} from "./types";
 
+import {UserType} from './types';
+
 export type SendMessageActionType = {
     type: 'SEND-MESSAGE'
 }
@@ -31,7 +33,7 @@ export type UnfollowUserAT = {
 
 export type SetUsersAT = {
     type: 'SET-USERS'
-    // users: UserType[]
+    users: UserType[]
 }
 
 export type DispatchActionsType = SendMessageActionType

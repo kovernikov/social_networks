@@ -10,6 +10,8 @@ import Setting from './components/Setting/Setting';
 // import store from './redux/store';
 import Friends from './components/Navbar/Friends/Friends';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import { Users } from './components/Users/Users';
+import { UsersContainer } from './components/Users/UsersContainer';
 // import {store} from './redux/redux-store';
 
 export type AppPropsType = {
@@ -25,11 +27,12 @@ const App: React.FC<AppPropsType> = (props) => {
             <Header/>
             <Navbar/>
             <div className={'app-wrapper-content'}>
-                {/*<Route path={'/sitbar'} render={() => <Navigation appState={props.appState}/>}/>*/}
                 <Route path={'/dialogs'}
                        render={() => <DialogsContainer />}/>
                 <Route path={'/profile'}
                        render={() => <Profile />}/>
+                <Route path={'/users'}
+                       render={() => <UsersContainer/>}/>
                 <Route path={'/news'} render={() => <News/>}/>
                 <Route path={'/music'} render={() => <Music/>}/>
                 <Route path={'/setting'} render={() => <Setting/>}/>

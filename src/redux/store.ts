@@ -50,7 +50,7 @@ export type StateType = {
     sidebar: SitebarType
 }
 
-type StoreType = {
+export type StoreType = {
     _state: StateType
     _onChange: () => void
     subscribe: (observer: () => void) => void

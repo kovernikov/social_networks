@@ -1,0 +1,29 @@
+.body {
+    display: flex;
+    margin: 10px;
+}
+.photo {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.cont {
+    margin-left: 30px;
+    display: flex;
+    justify-content: space-between;
+    border: blue 1px solid;
+    border-radius: 7px;
+    width: 30%;
+}
+.cont span{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+}
+.btn {
+    height: 20px;
+    width: 65px;
+}
