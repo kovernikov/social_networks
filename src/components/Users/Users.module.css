@@ -15,7 +15,7 @@
     justify-content: space-between;
     border: blue 1px solid;
     border-radius: 7px;
-    width: 30%;
+    width: 50%;
 }
 .cont span{
     display: flex;
