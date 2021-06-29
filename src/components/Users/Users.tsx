@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './Users.module.css'
 import {UsersPageDataType, UserType} from '../../types/types';
+import axios from 'axios';
+import userPhoto from '../../assets/images/userPhoto.png'
 
 type UsersPropsType = {
     usersPageData: UsersPageDataType
@@ -10,41 +12,18 @@ type UsersPropsType = {
 }
 
 export const Users = (props: UsersPropsType) => {
-    debugger
     if (props.usersPageData.users.length === 0) {
-        props.setUsers([
-            {
-                id: 1,
-                photoUrl: 'https://radiustheme.com/demo/html/cirkle/media/team/team_1.jpg',
-                followed: true,
-                fullName: 'Artem',
-                status: 'I am the boss',
-                location: {city: 'Praha', country: 'Cech republic'}
-            },
-            {
-                id: 2,
-                photoUrl: 'https://radiustheme.com/demo/html/cirkle/media/team/team_5.jpg',
-                followed: false,
-                fullName: 'Luba',
-                status: 'I am a student',
-                location: {city: 'New York', country: 'USA'}
-            },
-            {
-                id: 3,
-                photoUrl: 'https://radiustheme.com/demo/html/cirkle/media/team/team_3.jpg',
-                followed: false,
-                fullName: 'Ivan Boroda',
-                status: 'I am boss too',
-                location: {city: 'Kiev', country: 'Ukraine'}
-            },
-        ])
+        axios.get('https://social-network.samuraijs.com/api/1.0/users').then( response => {
+            props.setUsers(response.data.items)
+        } );
+
     }
 
     return (
         <div>
             {props.usersPageData.users.map(u => <div key={u.id} className={styles.body}>
                 <span>
-                    <div><img src={u.photoUrl} alt="avatar" className={styles.photo}/></div>
+                    <div><img src={u.photos.small != null ? u.photos.small : userPhoto} alt="avatar" className={styles.photo}/></div>
                     <div>{u.followed
                         ? <button onClick={() => props.unfollowUser(u.id)} className={styles.btn}>Unfollow</button>
                         : <button onClick={() => props.followUser(u.id)} className={styles.btn}>Follow</button>}</div>
@@ -55,8 +34,8 @@ export const Users = (props: UsersPropsType) => {
                         <div>{u.status}</div>
                     </span>
                     <span>
-                        <div>{u.location.country}</div>
-                        <div>{u.location.city}</div>
+                        <div>{'u.location.country'}</div>
+                        <div>{'u.location.city'}</div>
                     </span>
                 </span>
             </div>)}

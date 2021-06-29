@@ -6,8 +6,8 @@
     display: block;
     margin: 0 auto;
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
 }
 .cont {
     margin-left: 30px;
@@ -24,6 +24,7 @@
     padding: 5px;
 }
 .btn {
+    margin: 0 auto;
     height: 20px;
     width: 65px;
 }
