@@ -33,7 +33,7 @@ export type UnfollowUserAT = {
 
 export type SetUsersAT = {
     type: 'SET-USERS'
-    users: UserType[]
+    items: UserType[]
 }
 
 export type DispatchActionsType = SendMessageActionType

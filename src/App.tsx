@@ -10,7 +10,7 @@ import Setting from './components/Setting/Setting';
 // import store from './redux/store';
 import Friends from './components/Navbar/Friends/Friends';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
-import { Users } from './components/Users/Users';
+import { UsersClassComponent } from './components/Users/UsersClassComponent';
 import { UsersContainer } from './components/Users/UsersContainer';
 // import {store} from './redux/redux-store';
 

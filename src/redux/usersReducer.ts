@@ -2,7 +2,7 @@ import {DispatchActionsType, FollowUserAT, SetUsersAT, UnfollowUserAT} from '../
 import {UsersPageDataType, UserType} from '../types/types';
 
 const initialState = {
-    users: [],
+    items: [],
 }
 
 export const usersReducer = (state: UsersPageDataType = initialState, action: DispatchActionsType) => {
@@ -10,17 +10,17 @@ export const usersReducer = (state: UsersPageDataType = initialState, action: Di
         case 'FOLLOW':
             return {
                 ...state,
-                users: state.users.map(u => u.id === action.userID ? {...u, followed: true} : u)
+                items: state.items.map(u => u.id === action.userID ? {...u, followed: true} : u)
             }
         case 'UNFOLLOW':
             return {
                 ...state,
-                users: state.users.map(u => u.id === action.userID ? {...u, followed: false} : u)
+                items: state.items.map(u => u.id === action.userID ? {...u, followed: false} : u)
             }
         case 'SET-USERS':
             return {
                 ...state,
-                users: [/*...state.users,*/ ...action.users]
+                items: [/*...state.users,*/ ...action.items]
             }
         default:
             return state;
@@ -35,6 +35,6 @@ export const unfollowAC = (userID: number): UnfollowUserAT => {
     return {type: 'UNFOLLOW', userID}
 }
 
-export const setUsersAC = (users: UserType[]): SetUsersAT => {
-    return {type: 'SET-USERS', users}
+export const setUsersAC = (items: UserType[]): SetUsersAT => {
+    return {type: 'SET-USERS', items}
 }

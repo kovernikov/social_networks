@@ -19,20 +19,21 @@ export type LocationType = {
 
 export type UserType = {
 	id: number
-	photos: PhotosType
+	photos: {
+		small: string | null
+		large: string | null
+	}
 	followed: boolean
 	fullName: string
-	status: string
+	status: string | null
+	uniqueUrlName: string | null
 	location: LocationType
 }
 
-export type PhotosType = {
-	small: string
-	large: string
-}
+
 
 export type UsersPageDataType = {
-	users: UserType[]
+	items: UserType[]
 }
 export type ProfilePageDataType = {
 	postsData: Array<PostItemType>
