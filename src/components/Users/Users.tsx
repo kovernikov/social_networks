@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Users.module.css'
 import {UsersPageDataType, UserType} from '../../types/types';
 import axios from 'axios';
-import userPhoto from '../../assets/images/userPhoto.png'
+import userPhoto from '../../assets/images/user.png'
 
 type UsersPropsType = {
     usersPageData: UsersPageDataType
@@ -12,15 +12,19 @@ type UsersPropsType = {
 }
 
 export const Users = (props: UsersPropsType) => {
-    if (props.usersPageData.users.length === 0) {
-        axios.get('https://social-network.samuraijs.com/api/1.0/users').then( response => {
-            props.setUsers(response.data.items)
-        } );
+    const getUsers = () => {
+        if (props.usersPageData.users.length === 0) {
+            axios.get('https://social-network.samuraijs.com/api/1.0/users').then( response => {
+                props.setUsers(response.data.items)
+            } );
 
+        }
     }
+
 
     return (
         <div>
+            <button onClick={getUsers}>Get Users</button>
             {props.usersPageData.users.map(u => <div key={u.id} className={styles.body}>
                 <span>
                     <div><img src={u.photos.small != null ? u.photos.small : userPhoto} alt="avatar" className={styles.photo}/></div>
