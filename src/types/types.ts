@@ -18,22 +18,26 @@ export type LocationType = {
 }
 
 export type UserType = {
+	name: string
 	id: number
+	uniqueUrlName: string | null
 	photos: {
 		small: string | null
 		large: string | null
 	}
-	followed: boolean
-	fullName: string
 	status: string | null
-	uniqueUrlName: string | null
-	location: LocationType
+	followed: boolean
+	totalCount: number
 }
-
 
 
 export type UsersPageDataType = {
 	items: UserType[]
+	pageSize: number
+	totalUsersCount: number
+	currentPage: number
+	totalCount?: any
+
 }
 export type ProfilePageDataType = {
 	postsData: Array<PostItemType>

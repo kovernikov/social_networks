@@ -36,6 +36,16 @@ export type SetUsersAT = {
     items: UserType[]
 }
 
+export type SetCurrentPageAT = {
+    type: 'SET-CURRENT-PAGE'
+    currentPage: number
+}
+
+export type setTotalUserCountAT = {
+    type: 'SET-TOTAL-USER-COUNT'
+    count: number
+}
+
 export type DispatchActionsType = SendMessageActionType
     | UpdateNewMessageBodyActionType
     | AddPostActionType
@@ -43,3 +53,5 @@ export type DispatchActionsType = SendMessageActionType
     | FollowUserAT
     | UnfollowUserAT
     | SetUsersAT
+    | SetCurrentPageAT
+    | setTotalUserCountAT
