@@ -10,8 +10,8 @@ import {UsersPageDataType, UserType} from '../types/types';
 
 const initialState = {
 	items: [],
-	pageSize: 50,
-	totalUsersCount: 50,
+	pageSize: 10,
+	totalUsersCount: 0,
 	currentPage: 1,
 }
 
