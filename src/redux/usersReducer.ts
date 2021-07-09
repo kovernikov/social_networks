@@ -1,7 +1,7 @@
 import {
 	DispatchActionsType,
 	FollowUserAT,
-	SetCurrentPageAT,
+	SetCurrentPageAT, setIsFetchingAT,
 	setTotalUserCountAT,
 	SetUsersAT,
 	UnfollowUserAT
@@ -13,6 +13,7 @@ const initialState = {
 	pageSize: 10,
 	totalUsersCount: 0,
 	currentPage: 1,
+	isFetching: true,
 }
 
 export const usersReducer = (state: UsersPageDataType = initialState, action: DispatchActionsType) => {
@@ -36,6 +37,8 @@ export const usersReducer = (state: UsersPageDataType = initialState, action: Di
 			return {...state, currentPage: action.currentPage}
 		case 'SET-TOTAL-USER-COUNT':
 			return {...state, totalUsersCount: action.count}
+		case 'TOGGLE-IS-FETCHING':
+			return {...state, isFetching: action.isFetching}
 		default:
 			return state;
 	}
@@ -58,4 +61,8 @@ export const SetCurrentsPageAC = (currentPage: number): SetCurrentPageAT => {
 
 export const setTotalUsersCountAC = (totalUsersCount: number): setTotalUserCountAT => {
 	return {type: 'SET-TOTAL-USER-COUNT', count: totalUsersCount}
+}
+
+export const toggleIsFetchingsAC = (isFetching: boolean): setIsFetchingAT => {
+	return {type: 'TOGGLE-IS-FETCHING', isFetching}
 }

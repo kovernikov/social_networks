@@ -37,6 +37,7 @@ export type UsersPageDataType = {
 	totalUsersCount: number
 	currentPage: number
 	totalCount?: any
+	isFetching: boolean
 
 }
 export type ProfilePageDataType = {

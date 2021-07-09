@@ -46,6 +46,12 @@ export type setTotalUserCountAT = {
     count: number
 }
 
+export type setIsFetchingAT = {
+    type: 'TOGGLE-IS-FETCHING'
+    isFetching: boolean
+
+}
+
 export type DispatchActionsType = SendMessageActionType
     | UpdateNewMessageBodyActionType
     | AddPostActionType
@@ -55,3 +61,4 @@ export type DispatchActionsType = SendMessageActionType
     | SetUsersAT
     | SetCurrentPageAT
     | setTotalUserCountAT
+    | setIsFetchingAT
