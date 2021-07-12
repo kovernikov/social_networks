@@ -1,7 +1,4 @@
 import React from 'react';
-import s from './Friends.module.css';
-import {SitebarType} from '../../../redux/store';
-import Message from '../../Dialogs/Message/Message';
 
 type FriendTypeProps = {
     // photo: SitebarType

@@ -1,6 +1,20 @@
+import {DialogType, MessagesType} from '../redux/dialogsReducer';
+
 export type DialogItemType = {
 	id: number
 	name: string
+}
+export type DialogsPropsType = {
+	// state: initialStateType
+	// appPost: (text: string) => void
+	updateNewMessageBody: (body: string) => void
+	sendMessage: () => void
+	dialogsPage: MessagesPageType
+}
+export type MessagesPageType = {
+	dialogs: Array<DialogType>
+	messages: Array<MessagesType>
+	newMessageBody: string
 }
 export type MessageItemType = {
 	id: number
@@ -8,15 +22,41 @@ export type MessageItemType = {
 }
 export type PostItemType = {
 	id: number
-	postMessage: string
-	likeCount: number
+	message: string
+	likesCount: number
 }
-
-export type LocationType = {
-	city: string
-	country: string
+export type IconsType = {
+	id: number
+	img: string
 }
-
+export type FriendsType = {
+	id: number
+	name: string
+}
+export type SitebarType = {
+	friends: Array<FriendsType>
+	icon: Array<IconsType>
+}
+export type ProfileInfoType = {
+	userId: number
+	lookingForAJob: boolean
+	lookingForAJobDescription: string
+	fullName: string
+	contacts: {
+		github: string
+		vk: string
+		facebook: string
+		instagram: string
+		twitter: string
+		website: string
+		youtube: string
+		mainLink: string
+	}
+	photos: {
+		small: string | null
+		large: string | null
+	}
+}
 export type UserType = {
 	name: string
 	id: number
@@ -29,8 +69,6 @@ export type UserType = {
 	followed: boolean
 	totalCount: number
 }
-
-
 export type UsersPageDataType = {
 	items: UserType[]
 	pageSize: number
@@ -43,6 +81,7 @@ export type UsersPageDataType = {
 export type ProfilePageDataType = {
 	postsData: Array<PostItemType>
 	newPostText: string
+	profile: ProfileInfoType | null
 }
 export type DialogsPageDataType = {
 	dialogsData: Array<DialogItemType>

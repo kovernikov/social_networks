@@ -50,6 +50,7 @@ const mapStateToProps = (state: AppStateType): MapStateToPropsType => ({
 	// no debugger
 	postsData: state.profilePage.postsData,
 	newPostText: state.profilePage.newPostText,
+	profile: state.profilePage.profile
 })
 const mapDispatchToProps = (dispatch: AppDispatchType): MapDispatchToPropsType => {
 	// yes debugger

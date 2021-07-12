@@ -1,7 +1,9 @@
 // import {setUsersAC} from "../redux/usersReducer";
 // import {UserType} from "./types";
 
-import {UserType} from './types';
+import {ProfileInfoType, UserType} from './types';
+import {addPostAC, changeNewTextAC, setUserProfile} from '../redux/profileReducer';
+import {sendMessageAC, updateNewMessageBodyAC} from '../redux/dialogsReducer';
 
 export type SendMessageActionType = {
     type: 'SEND-MESSAGE'
@@ -46,10 +48,22 @@ export type setTotalUserCountAT = {
     count: number
 }
 
+
+export type ActionsTypes =
+    ReturnType<typeof addPostAC>
+    | ReturnType<typeof changeNewTextAC>
+    | ReturnType<typeof updateNewMessageBodyAC>
+    | ReturnType<typeof sendMessageAC>
+    | ReturnType<typeof setUserProfile>
+
 export type setIsFetchingAT = {
     type: 'TOGGLE-IS-FETCHING'
     isFetching: boolean
+}
 
+export type SetUserProfileAT = {
+    type: 'SET-USER-PROFILE',
+    profileInfo: ProfileInfoType
 }
 
 export type DispatchActionsType = SendMessageActionType
@@ -62,3 +76,4 @@ export type DispatchActionsType = SendMessageActionType
     | SetCurrentPageAT
     | setTotalUserCountAT
     | setIsFetchingAT
+    | SetUserProfileAT

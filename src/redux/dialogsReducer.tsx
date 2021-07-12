@@ -1,4 +1,5 @@
-import {ActionsTypes} from './store';
+import {ActionsTypes} from '../types/dispatchTypes';
+
 
 const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
 const SEND_MESSAGE = 'SEND-MESSAGE ';

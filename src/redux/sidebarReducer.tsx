@@ -1,4 +1,6 @@
-import {ActionsTypes, SitebarType} from './store';
+import {SitebarType} from '../types/types';
+import {ActionsTypes} from '../types/dispatchTypes';
+
 
 let initialState = {
     friends: [

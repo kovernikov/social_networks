@@ -63,7 +63,7 @@ export class UsersAPIClassComponent extends React.Component <UsersPropsType> {
 
 	componentDidMount() {
 		this.props.toggleIsFetching(true)
-		axios.get<UsersPageDataType>(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.usersPageData.currentPage}&count=${this.props.usersPageData.pageSize}`).then(response => {
+		axios.get<UsersPageDataType>(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.usersPageData.currentPage}&count=${this.props.usersPageData.pageSize}`,{headers: { "API-KEY": "436269e6-3a0e-4ec4-988b-c3bac73f2390"}}).then(response => {
 			this.props.toggleIsFetching(false)
 			this.props.setUsers(response.data.items)
 			this.props.setTotalUserCount(response.data.totalCount);

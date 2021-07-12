@@ -1,8 +1,10 @@
-import {PostsItemType} from '../../../../redux/profileReducer';
+import {PostItemType, ProfileInfoType} from '../../../../types/types';
+
 
 export type MapStateToPropsType = {
-    postsData: Array<PostsItemType>
+    postsData: Array<PostItemType>
     newPostText: string
+    profile: ProfileInfoType | null
 }
 
 export type MapDispatchToPropsType = {
