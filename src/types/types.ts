@@ -1,9 +1,20 @@
-import {DialogType, MessagesType} from '../redux/dialogsReducer';
+// import {DialogType, MessagesType} from '../redux/dialogsReducer';
 
 export type DialogItemType = {
 	id: number
 	name: string
 }
+
+export type DialogType = {
+	id: number
+	name: string
+}
+
+export type MessagesType = {
+	id: number
+	message: string
+}
+
 export type DialogsPropsType = {
 	// state: initialStateType
 	// appPost: (text: string) => void

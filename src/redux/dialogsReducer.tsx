@@ -1,19 +1,10 @@
 import {ActionsTypes} from '../types/dispatchTypes';
+import { DialogType, MessagesType } from '../types/types';
 
 
 const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
 const SEND_MESSAGE = 'SEND-MESSAGE ';
 
-
-export type DialogType = {
-    id: number
-    name: string
-}
-
-export type MessagesType = {
-    id: number
-    message: string
-}
 
 const initialState = {
     dialogs: [

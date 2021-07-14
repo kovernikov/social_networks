@@ -9,7 +9,7 @@ import Setting from './components/Setting/Setting';
 import Friends from './components/Navbar/Friends/Friends';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import {UsersContainer} from './components/Users/UsersContainer';
-import ProfileContainer from './components/Profile/ProfileContainer';
+import { ProfileContainer } from './components/Profile/ProfileContainer';
 
 export type AppPropsType = {
 
@@ -25,7 +25,7 @@ const App: React.FC<AppPropsType> = (props) => {
             <div className={'app-wrapper-content'}>
                 <Route path={'/dialogs'}
                        render={() => <DialogsContainer />}/>
-                <Route path={'/profile/:userId'}
+                <Route path={'/profile/:userId?'}
                        render={() => <ProfileContainer />}/>
                 <Route path={'/users'}
                        render={() => <UsersContainer/>}/>
