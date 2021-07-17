@@ -89,6 +89,19 @@ export type UsersPageDataType = {
 	isFetching: boolean
 
 }
+export type AuthType = {
+	data:
+		{
+			id: number,
+			login: string,
+			email: string,
+		},
+	isAuth: boolean
+	messages: string[],
+	fieldsErrors: string[],
+	resultCode: number,
+}
+
 export type ProfilePageDataType = {
 	postsData: Array<PostItemType>
 	newPostText: string
