@@ -65,7 +65,7 @@ export type UsersPropsType = {
 export class UsersAPIClassComponent extends React.Component<UsersPropsType> {
 
 	componentDidMount() {
-		this.props.toggleIsFetching(false)
+		this.props.toggleIsFetching(true)
 		usersAPI.getUsers(this.props.usersPageData.currentPage, this.props.usersPageData.pageSize)
 			.then(data => {
 				this.props.setUsers(data.items)
@@ -77,7 +77,7 @@ export class UsersAPIClassComponent extends React.Component<UsersPropsType> {
 	onPageChanged = (pegeNumber: number) => {
 		this.props.setCurrentPage(pegeNumber);
 		this.props.toggleIsFetching(true)
-		usersAPI.getUsers(this.props.usersPageData.currentPage, this.props.usersPageData.pageSize)
+		usersAPI.getUsers(pegeNumber, this.props.usersPageData.pageSize)
 			.then(data => {
 				this.props.toggleIsFetching(true);
 				this.props.setUsers(data.items);
@@ -92,6 +92,7 @@ export class UsersAPIClassComponent extends React.Component<UsersPropsType> {
 				followUser={this.props.followUser}
 				unfollowUser={this.props.unfollowUser}
 				items={this.props.usersPageData.items}
+				followingInProgress={this.props.usersPageData.followingInProgress}
 				onPageChanged={this.onPageChanged}
 				totalUsersCount={this.props.usersPageData.totalUsersCount}
 				pageSize={this.props.usersPageData.pageSize}

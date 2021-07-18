@@ -40,7 +40,7 @@ export const usersReducer = (state: UsersPageDataType = initialState, action: Di
 			return {...state, totalUsersCount: action.count}
 		case 'TOGGLE-IS-FETCHING':
 			return {...state, isFetching: action.isFetching}
-		case "SET-FOLLOWING-IN-PROGRESS":
+		case 'SET-FOLLOWING-IN-PROGRESS':
 			return {
 				...state,
 				followingInProgress: action.isFetching
@@ -75,5 +75,5 @@ export const toggleIsFetching = (isFetching: boolean): setIsFetchingAT => {
 	return {type: 'TOGGLE-IS-FETCHING', isFetching}
 }
 export const setFollowingInProgress = (isFetching: boolean, userId: number): SetFollowingInProgress => {
-	return {type: "SET-FOLLOWING-IN-PROGRESS", isFetching, userId}
+	return {type: 'SET-FOLLOWING-IN-PROGRESS', isFetching, userId}
 }
