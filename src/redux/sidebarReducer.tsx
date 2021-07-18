@@ -1,5 +1,5 @@
 import {SitebarType} from '../types/types';
-import {ActionsTypes} from '../types/dispatchTypes';
+import {ActionsTypes, DispatchActionsType} from '../types/dispatchTypes';
 
 
 let initialState = {
@@ -16,7 +16,7 @@ let initialState = {
     ]
 };
 
-const sidebarReducer = (state: SitebarType = initialState, action: ActionsTypes) => {
+const sidebarReducer = (state: SitebarType = initialState, action: DispatchActionsType) => {
 
     return state;
 }

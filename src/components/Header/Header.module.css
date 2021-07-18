@@ -5,16 +5,17 @@
     margin-bottom: 10px;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .header img {
     width: 40px;
+    height: 40px;
     margin: 10px;
 
 }
 .loginBlock {
-    line-height: 100px;
+    line-height: 60px;
 }
 .loginBlock a {
     color: white;

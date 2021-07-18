@@ -14,7 +14,6 @@ class HeaderClassComponent extends React.Component<HeaderContainerProps> {
 
     componentDidMount() {
         usersAPI.getAuth()
-        // axios.get<AuthType>(`https://social-network.samuraijs.com/api/1.0/auth/me)
             .then(response => {
                 if(response.resultCode === 0) {
                     let {id, login, email} = response.data;

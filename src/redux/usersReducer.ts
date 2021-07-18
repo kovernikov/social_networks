@@ -1,7 +1,7 @@
 import {
 	DispatchActionsType,
 	FollowUserAT,
-	SetCurrentPageAT, setIsFetchingAT,
+	SetCurrentPageAT, SetFollowingInProgress, setIsFetchingAT,
 	setTotalUserCountAT,
 	SetUsersAT,
 	UnfollowUserAT
@@ -10,13 +10,14 @@ import {UsersPageDataType, UserType} from '../types/types';
 
 const initialState = {
 	items: [],
-	pageSize: 10,
-	totalUsersCount: 0,
+	pageSize: 7,
+	totalUsersCount: 100,
 	currentPage: 1,
-	isFetching: true,
+	isFetching: false,
+	followingInProgress: []
 }
 
-export const usersReducer = (state: UsersPageDataType = initialState, action: DispatchActionsType) => {
+export const usersReducer = (state: UsersPageDataType = initialState, action: DispatchActionsType): UsersPageDataType => {
 	switch (action.type) {
 		case 'FOLLOW':
 			return {
@@ -39,6 +40,13 @@ export const usersReducer = (state: UsersPageDataType = initialState, action: Di
 			return {...state, totalUsersCount: action.count}
 		case 'TOGGLE-IS-FETCHING':
 			return {...state, isFetching: action.isFetching}
+		case "SET-FOLLOWING-IN-PROGRESS":
+			return {
+				...state,
+				followingInProgress: action.isFetching
+					? [...state.followingInProgress, action.userId]
+					: state.followingInProgress.filter(id => id !== action.userId)
+			}
 		default:
 			return state;
 	}
@@ -65,4 +73,7 @@ export const setTotalUserCount = (totalUsersCount: number): setTotalUserCountAT 
 
 export const toggleIsFetching = (isFetching: boolean): setIsFetchingAT => {
 	return {type: 'TOGGLE-IS-FETCHING', isFetching}
+}
+export const setFollowingInProgress = (isFetching: boolean, userId: number): SetFollowingInProgress => {
+	return {type: "SET-FOLLOWING-IN-PROGRESS", isFetching, userId}
 }

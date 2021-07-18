@@ -3,9 +3,9 @@ import {addPostAC, changeNewTextAC, setUserProfile} from '../redux/profileReduce
 import {sendMessageAC, updateNewMessageBodyAC} from '../redux/dialogsReducer';
 import { setAuthUserData } from '../redux/authReducer';
 
-export type SendMessageActionType = {
-    type: 'SEND-MESSAGE'
-}
+// export type SendMessageActionType = {
+//     type: 'SEND-MESSAGE'
+// }
 
 export type UpdateNewMessageBodyActionType = {
     type: 'UPDATE-NEW-MESSAGE-BODY'
@@ -65,15 +65,21 @@ export type SetUserDataAT = {
     }
 }
 
+export type SetFollowingInProgress = {
+    type: "SET-FOLLOWING-IN-PROGRESS",
+    isFetching: boolean,
+    userId: number
+}
+
 export type ActionsTypes =
-    ReturnType<typeof addPostAC>
+    // ReturnType<typeof addPostAC>
     | ReturnType<typeof changeNewTextAC>
     | ReturnType<typeof updateNewMessageBodyAC>
     | ReturnType<typeof sendMessageAC>
-    | ReturnType<typeof setUserProfile>
-    | ReturnType<typeof setAuthUserData>
+    // | ReturnType<typeof setUserProfile>
+    // | ReturnType<typeof setAuthUserData>
 
-export type DispatchActionsType = SendMessageActionType
+export type DispatchActionsType = /*SendMessageActionType*/
     | UpdateNewMessageBodyActionType
     | AddPostActionType
     | UpdateNewPostTextActionType
@@ -85,3 +91,4 @@ export type DispatchActionsType = SendMessageActionType
     | setIsFetchingAT
     | SetUserProfileAT
     | SetUserDataAT
+    | SetFollowingInProgress

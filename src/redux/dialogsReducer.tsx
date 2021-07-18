@@ -1,4 +1,4 @@
-import {ActionsTypes} from '../types/dispatchTypes';
+import { ActionsTypes } from '../types/dispatchTypes';
 import { DialogType, MessagesType } from '../types/types';
 
 

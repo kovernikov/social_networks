@@ -14,11 +14,10 @@ function Header(props: HeaderPropsType) {
     return (
         <header className={s.header}>
             <div>
-                <h1>SBN</h1>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_-I86af1RynC0u9KgHKUD-H6tCwT_Cf_P2Q&usqp=CAU"/>
             </div>
             <div className={s.loginBlock}>
-                {props.isAuth ? props.login
-                    : <NavLink to={'/login'}>Login</NavLink> }
+                {props.isAuth ? props.login : <NavLink to={'/login'}>Login</NavLink>}
             </div>
         </header>
     )

@@ -78,16 +78,16 @@ export type UserType = {
 	}
 	status: string | null
 	followed: boolean
-	totalCount: number
+	// totalCount: number
 }
 export type UsersPageDataType = {
 	items: UserType[]
 	pageSize: number
 	totalUsersCount: number
 	currentPage: number
-	totalCount?: any
+	totalCount?: number
 	isFetching: boolean
-
+	followingInProgress: number[];
 }
 export type AuthType = {
 	data:

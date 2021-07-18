@@ -1,5 +1,5 @@
-import {AuthType} from "../types/types";
-import {DispatchActionsType, SetUserDataAT} from "../types/dispatchTypes";
+import {AuthType} from '../types/types';
+import { DispatchActionsType, SetUserDataAT} from '../types/dispatchTypes';
 
 let initialState: AuthType = {
 	data:
@@ -16,20 +16,20 @@ let initialState: AuthType = {
 
 export const authReducer = (state = initialState, action: DispatchActionsType) => {
 	switch (action.type) {
-		case "SET-USER-DATA":
+		case 'SET-USER-DATA':
 			return {
 				...state,
-				...action.data,
+				data: {...action.data},
 				isAuth: true
 			}
 		default:
-			return state
+			return state;
 	}
 }
 
 export const setAuthUserData = (id: number, login: string, email: string): SetUserDataAT => {
 	return {
-		type: "SET-USER-DATA",
+		type: 'SET-USER-DATA',
 		data: {
 			id, login, email,
 		}
