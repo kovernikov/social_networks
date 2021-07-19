@@ -37,6 +37,7 @@
     font-size: 20px;
 }
 .imgs {
-    width: 50px;
+    width: 60px;
     height: 50px;
+    /*border-radius: 50%;*/
 }
