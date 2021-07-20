@@ -9,8 +9,8 @@ import Setting from './components/Setting/Setting';
 import Friends from './components/Navbar/Friends/Friends';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import {UsersContainer} from './components/Users/UsersContainer';
-import { ProfileContainer } from './components/Profile/ProfileContainer';
 import { HeaderContainer } from './components/Header/HeaderContainer';
+import { ProfileContainer } from './components/Profile/ProfileContainer';
 
 export type AppPropsType = {
 
