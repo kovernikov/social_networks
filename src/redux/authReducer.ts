@@ -1,5 +1,7 @@
 import {AuthType} from '../types/types';
 import { DispatchActionsType, SetUserDataAT} from '../types/dispatchTypes';
+import { AppDispatchType } from './redux-store';
+import { usersAPI } from '../api/api';
 
 let initialState: AuthType = {
 	data:
@@ -36,3 +38,12 @@ export const setAuthUserData = (id: number, login: string, email: string): SetUs
 	}
 }
 
+export const getAuthUserData = () => (dispatch: AppDispatchType) => {
+	usersAPI.getAuth()
+		.then(response => {
+			if(response.resultCode === 0) {
+				let {id, login, email} = response.data
+				dispatch(setAuthUserData(id, login, email))
+			}
+		});
+}

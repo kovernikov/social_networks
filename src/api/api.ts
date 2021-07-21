@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { ProfileInfoType } from '../types/types';
 
 const instance = axios.create({
 	baseURL: `https://social-network.samuraijs.com/api/1.0/`,
@@ -24,7 +25,7 @@ export const usersAPI = {
 			.then(response => response.data)
 	},
 	getProfile: (userId: string) => {
-		return instance.get(`profile/${userId}`)
+		return instance.get<ProfileInfoType>(`profile/${userId}`)
 			.then(response => response.data)
 	}
 }

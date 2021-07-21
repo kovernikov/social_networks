@@ -49,7 +49,7 @@ export type SitebarType = {
 	icon: Array<IconsType>
 }
 export type ProfileInfoType = {
-	userId: number
+	userId: number | string
 	lookingForAJob: boolean
 	lookingForAJobDescription: string
 	fullName: string

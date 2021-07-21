@@ -1,7 +1,6 @@
 import {ProfileInfoType, UserType} from './types';
-import {addPostAC, changeNewTextAC, setUserProfile} from '../redux/profileReducer';
+import {changeNewTextAC} from '../redux/profileReducer';
 import {sendMessageAC, updateNewMessageBodyAC} from '../redux/dialogsReducer';
-import {setAuthUserData} from '../redux/authReducer';
 
 // export type SendMessageActionType = {
 //     type: 'SEND-MESSAGE'
