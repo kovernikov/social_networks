@@ -13,7 +13,6 @@ const Dialogs = (props: DialogsPropsType) => {
 	// let messagesElements = state.messages.map(m => <Message message={m.message}/>);
 	const newMessageBody = props.dialogsPage.newMessageBody;
 
-	// let newMessageElement = React.createRef<HTMLTextAreaElement>()
 
 	const onSendMessageClick = () => {
 		props.sendMessage()
@@ -23,8 +22,6 @@ const Dialogs = (props: DialogsPropsType) => {
 		let body = e.target.value;
 		props.updateNewMessageBody(body);
 	}
-
-	if (!props.isAuth) return <Redirect to={'/login'}/>;
 
 	return (
 		<div className={s.dialogs}>
