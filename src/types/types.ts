@@ -21,6 +21,7 @@ export type DialogsPropsType = {
 	updateNewMessageBody: (body: string) => void
 	sendMessage: () => void
 	dialogsPage: MessagesPageType
+	isAuth: boolean
 }
 export type MessagesPageType = {
 	dialogs: Array<DialogType>

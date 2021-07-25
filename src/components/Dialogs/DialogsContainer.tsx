@@ -13,6 +13,7 @@ import Dialogs from './Dialogs';
 
 type MapStateToPropsType = {
     dialogsPage: initialStateType
+    isAuth: boolean
 }
 
 type MapDispatchToPropsType = {
@@ -22,7 +23,8 @@ type MapDispatchToPropsType = {
 
 const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
     return {
-        dialogsPage: state.dialogsPage /*state.dialogsPage*/
+        dialogsPage: state.dialogsPage, /*state.dialogsPage*/
+        isAuth: state.authData.isAuth
     }
 }
 const mapDispatchToProps = (dispatch: AppDispatchType): MapDispatchToPropsType => {
