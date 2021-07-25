@@ -8,8 +8,16 @@ import {Redirect, RouteComponentProps, withRouter} from 'react-router-dom';
 import {getUserProfileTC} from '../../redux/profileReducer'
 import { usersAPI } from '../../api/api';
 import { withAuthRedirect } from '../../hok/witthAuthRedirect';
+import { compose } from 'redux';
 
-class ProfileContainerClass extends React.Component<ProfileContainerWithRoutePropsType> {
+type MapDispatchToPropsType = {
+	getUserProfileTC: (userId: string) => void
+}
+type MapStateToPropsType = {
+	profile: ProfileInfoType | null
+}
+
+class ProfileContainer extends React.Component<ProfileContainerWithRoutePropsType> {
 	componentDidMount() {
 		this.props.getUserProfileTC(this.props.match.params.userId)
 	}
@@ -29,10 +37,12 @@ let mapStateToProps = (state: AppStateType) => {
 	}
 }
 
-const connector = connect(mapStateToProps, {getUserProfileTC});
-type ProfileContainerProps = ConnectedProps<typeof connector>;
+type ProfileContainerProps =  MapStateToPropsType & MapDispatchToPropsType;
 type PathParamsType = { userId: string };
 type ProfileContainerWithRoutePropsType = RouteComponentProps<PathParamsType> & ProfileContainerProps;
-const withUrlDataProfileContainer = withRouter(ProfileContainerClass);
-export const ProfileContainer = withAuthRedirect (connector(withUrlDataProfileContainer));
 
+export default compose<React.ComponentType>(
+	connect(mapStateToProps, {getUserProfileTC}),
+	withRouter,
+	withAuthRedirect
+)(ProfileContainer)

@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {AppDispatchType, AppStateType} from '../../redux/redux-store';
 import Dialogs from './Dialogs';
 import { withAuthRedirect } from '../../hok/witthAuthRedirect';
+import { compose } from 'redux';
 
 
 type MapStateToPropsType = {
@@ -33,6 +34,10 @@ const mapDispatchToProps = (dispatch: AppDispatchType): MapDispatchToPropsType =
 }
 
 // @ts-ignore
-const DialogsContainer = withAuthRedirect (connect (mapStateToProps, mapDispatchToProps) (Dialogs));
+// const DialogsContainer = withAuthRedirect (connect (mapStateToProps, mapDispatchToProps) (Dialogs));
 
-export default DialogsContainer;
+export default compose<React.ComponentType>(
+    connect (mapStateToProps, mapDispatchToProps),
+withAuthRedirect
+)(Dialogs);
+

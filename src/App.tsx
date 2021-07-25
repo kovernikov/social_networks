@@ -8,9 +8,9 @@ import Music from './components/Music/Music';
 import Setting from './components/Setting/Setting';
 import Friends from './components/Navbar/Friends/Friends';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
-import {UsersContainer} from './components/Users/UsersContainer';
+import UsersContainer from './components/Users/UsersContainer';
 import { HeaderContainer } from './components/Header/HeaderContainer';
-import { ProfileContainer } from './components/Profile/ProfileContainer';
+import  ProfileContainer  from './components/Profile/ProfileContainer';
 import LoginPage from './components/Login/Login';
 
 export type AppPropsType = {

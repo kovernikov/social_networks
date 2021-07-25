@@ -14,9 +14,12 @@ import {
 } from '../../redux/usersReducer';
 import {Users} from './Users';
 import {Preloader} from '../../common/Preloader/Preloader';
+import { withAuthRedirect } from '../../hok/witthAuthRedirect';
+import { compose } from 'redux';
 
 
-export class UsersAPIClassComponent extends React.Component<UsersContainerProps> {
+// @ts-ignore
+export class UsersContainer extends React.Component<UsersContainerProps> {
 
 	componentDidMount() {
 		this.props.getUsersThunkCreator(this.props.usersPageData.currentPage, this.props.usersPageData.pageSize);
@@ -49,14 +52,26 @@ const mapStateToProps = (state: AppStateType) => {
 	}
 }
 
-export const connector = connect(mapStateToProps, {
-	followUser,
-	unfollowUser,
-	setCurrentPage,
-	getUsersThunkCreator,
-	followUserThunkCreator,
-	unfollowUserThunkCreator,
-});
+// export const connector = connect(mapStateToProps, {
+// 	followUser,
+// 	unfollowUser,
+// 	setCurrentPage,
+// 	getUsersThunkCreator,
+// 	followUserThunkCreator,
+// 	unfollowUserThunkCreator,
+// });
+//
+// type UsersContainerProps = ConnectedProps<typeof connector>;
+// export const UsersContainer = withAuthRedirect (connector(UsersAPIClassComponent));
 
-type UsersContainerProps = ConnectedProps<typeof connector>;
-export const UsersContainer = connector(UsersAPIClassComponent);
+export default compose<React.ComponentType> (
+	withAuthRedirect,
+	connect(mapStateToProps, {
+		followUser,
+		unfollowUser,
+		setCurrentPage,
+		getUsersThunkCreator,
+		followUserThunkCreator,
+		unfollowUserThunkCreator,
+	})
+)(UsersContainer)
