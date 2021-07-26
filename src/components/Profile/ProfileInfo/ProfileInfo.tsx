@@ -2,24 +2,24 @@ import React from 'react';
 import s from './ProfileInfo.module.css';
 import {ProfileInfoType} from '../../../types/types';
 import userPhoto from '../../../assets/images/user.png'
+import ProfileStatus from './ProfileStatus'
+import { Preloader } from '../../../common/Preloader/Preloader';
 
 type ProfileInfoPropsType = {
     profile: ProfileInfoType | null
 }
 
 const ProfileInfo = (props: ProfileInfoPropsType) => {
+    
+    if (!props.profile) {
+        return <Preloader/>
+    }
     return (
         <div>
-            <div>
-                <img  className={s.profileImage}
-                    src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&h=350"/>
-            </div>
-            {/*<div className={s.descriptionBlock}>*/}
-            {/*    /!*<img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Kot-019.jpg"/>*!/*/}
-            {/*    ava + description*/}
-            {/*</div>*/}
+
             <div className={s.descriptionBlock}>
                 <img src={props.profile?.photos.large ? props.profile.photos.large : userPhoto}/>
+                <ProfileStatus status={'Hello'}/>
                 <div>
                     <span>{props.profile?.fullName}</span>
                 </div>

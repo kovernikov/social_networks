@@ -44,5 +44,5 @@ type ProfileContainerWithRoutePropsType = RouteComponentProps<PathParamsType> & 
 export default compose<React.ComponentType>(
 	connect(mapStateToProps, {getUserProfileTC}),
 	withRouter,
-	withAuthRedirect
+	// withAuthRedirect
 )(ProfileContainer)

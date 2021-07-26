@@ -4,7 +4,7 @@ import { ProfileInfoType } from '../types/types';
 const instance = axios.create({
 	baseURL: `https://social-network.samuraijs.com/api/1.0/`,
 	withCredentials: true,
-	headers: {'API-KEY': '436269e6-3a0e-4ec4-988b-c3bac73f2390'}
+	headers: {'API-KEY': '6587bf96-e19c-43d8-b7f7-8a779c2e9e9d'}
 })
 
 export const usersAPI = {
