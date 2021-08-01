@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ProfileInfoType } from '../types/types';
+import {ProfileInfoType} from '../types/types';
 
 const instance = axios.create({
 	baseURL: `https://social-network.samuraijs.com/api/1.0/`,
@@ -21,11 +21,31 @@ export const usersAPI = {
 			.then(response => response.data.resultCode)
 	},
 	getAuth: () => {
-		return instance.get('auth/me')
-			.then(response => response.data)
+		console.warn('use authAPI')
+		return authAPI.getAuth()
 	},
 	getProfile: (userId: string) => {
-		return instance.get<ProfileInfoType>(`profile/${userId}`)
+		console.warn('Obsolete method. Please profileAPI object.')
+		return profileAPI.getProfile(userId);
+	}
+}
+
+export const authAPI = {
+	getAuth: () => {
+		return instance.get(`auth/me`)
 			.then(response => response.data)
+	},
+}
+
+export const profileAPI = {
+	getProfile: (userId: string) => {
+		return instance.get(`profile/${userId}`)
+			.then(response => response.data)
+	},
+	getStatus: (userId: string) => {
+		return instance.get(`profile/status/${userId}`)
+	},
+	updateStatus(newText: string) {
+		return instance.put(`profile/status/`, {status: newText})
 	}
 }

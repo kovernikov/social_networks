@@ -70,6 +70,11 @@ export type SetFollowingInProgress = {
 	userId: number
 }
 
+export type SetProfileStatusAT = {
+	type: 'SET-STATUS'
+	status: string
+}
+
 export type ActionsTypes =
 // ReturnType<typeof addPostAC>
 	| ReturnType<typeof changeNewTextAC>
@@ -91,3 +96,4 @@ export type DispatchActionsType = /*SendMessageActionType*/
 	| SetUserProfileAT
 	| SetUserDataAT
 	| SetFollowingInProgress
+	| SetProfileStatusAT

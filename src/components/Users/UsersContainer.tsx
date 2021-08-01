@@ -14,8 +14,8 @@ import {
 } from '../../redux/usersReducer';
 import {Users} from './Users';
 import {Preloader} from '../../common/Preloader/Preloader';
-import { withAuthRedirect } from '../../hok/witthAuthRedirect';
-import { compose } from 'redux';
+import {withAuthRedirect} from '../../hok/witthAuthRedirect';
+import {compose} from 'redux';
 
 
 // @ts-ignore
@@ -64,7 +64,7 @@ const mapStateToProps = (state: AppStateType) => {
 // type UsersContainerProps = ConnectedProps<typeof connector>;
 // export const UsersContainer = withAuthRedirect (connector(UsersAPIClassComponent));
 
-export default compose<React.ComponentType> (
+export default compose<React.ComponentType>(
 	withAuthRedirect,
 	connect(mapStateToProps, {
 		followUser,

@@ -15,7 +15,7 @@ import {AppDispatchType} from './redux-store';
 const initialState = {
 	items: [],
 	pageSize: 7,
-	totalUsersCount: 0,
+	totalUsersCount: 10,
 	currentPage: 1,
 	isFetching: false,
 	followingInProgress: []
@@ -34,10 +34,7 @@ export const usersReducer = (state: UsersPageDataType = initialState, action: Di
 				items: state.items.map(u => u.id === action.userID ? {...u, followed: false} : u)
 			}
 		case 'SET-USERS':
-			return {
-				...state,
-				items: action.items
-			}
+			return {...state, items: [...action.items]}
 		case 'SET-CURRENT-PAGE':
 			return {...state, currentPage: action.currentPage}
 		case 'SET-TOTAL-USER-COUNT':
