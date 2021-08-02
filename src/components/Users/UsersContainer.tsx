@@ -52,18 +52,6 @@ const mapStateToProps = (state: AppStateType) => {
 	}
 }
 
-// export const connector = connect(mapStateToProps, {
-// 	followUser,
-// 	unfollowUser,
-// 	setCurrentPage,
-// 	getUsersThunkCreator,
-// 	followUserThunkCreator,
-// 	unfollowUserThunkCreator,
-// });
-//
-// type UsersContainerProps = ConnectedProps<typeof connector>;
-// export const UsersContainer = withAuthRedirect (connector(UsersAPIClassComponent));
-
 export default compose<React.ComponentType>(
 	withAuthRedirect,
 	connect(mapStateToProps, {
