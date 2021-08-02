@@ -14,7 +14,7 @@ import {AppDispatchType} from './redux-store';
 
 const initialState = {
 	items: [],
-	pageSize: 7,
+	pageSize: 9,
 	totalUsersCount: 10,
 	currentPage: 1,
 	isFetching: false,

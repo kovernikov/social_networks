@@ -9,3 +9,22 @@ img {
 .posts {
     margin-top: 10px;
 }
+@media screen and (max-width: 645px) {
+    .postsBlock {
+        margin: 40px auto 0;
+        display: block;
+        text-align: center
+    }
+
+    img {
+        margin: 0 auto;
+        display: block;
+        text-align: center
+    }
+
+    .posts {
+        margin: 0 auto;
+        display: block;
+        text-align: center
+    }
+}

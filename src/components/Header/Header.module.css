@@ -1,7 +1,7 @@
 .header {
     grid-area: h;
     background-color: green;
-    height: 100px;
+    height: 100%;
     margin-bottom: 10px;
     width: 100%;
     display: flex;
@@ -16,8 +16,10 @@
 }
 .loginBlock {
     line-height: 60px;
+    padding: 0 10px 0 ;
 }
 .loginBlock a {
+
     color: white;
 }
 
