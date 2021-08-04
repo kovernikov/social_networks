@@ -16,9 +16,6 @@ export type MessagesType = {
 }
 
 export type DialogsPropsType = {
-	// state: initialStateType
-	// appPost: (text: string) => void
-	// onNewMessage: (values: string) => void
 	updateNewMessageBody: (body: string) => void
 	sendMessage: (values: string) => void
 	dialogsPage: MessagesPageType
@@ -80,7 +77,6 @@ export type UserType = {
 	}
 	status: string | null
 	followed: boolean
-	// totalCount: number
 }
 export type UsersPageDataType = {
 	items: UserType[]
@@ -106,7 +102,7 @@ export type AuthType = {
 
 export type ProfilePageDataType = {
 	postsData: Array<PostItemType>
-	newPostText: string
+	// newPostText: string
 	profile: ProfileInfoType | null
 	status: string
 }

@@ -3,8 +3,8 @@ import s from './Dialog.module.css'
 import Message from './Message/Message';
 import DialogItem from './DialogItem/DialogItem';
 import {DialogsPropsType} from '../../types/types';
-import { Redirect } from 'react-router-dom';
-import { Field, InjectedFormProps, reduxForm } from 'redux-form';
+import {Redirect} from 'react-router-dom';
+import {Field, InjectedFormProps, reduxForm} from 'redux-form';
 
 
 const Dialogs = (props: DialogsPropsType) => {
@@ -13,16 +13,6 @@ const Dialogs = (props: DialogsPropsType) => {
 	const messagesElements = props.dialogsPage.messages.map(m => <Message message={m.message} key={m.id}/>);
 	// let messagesElements = state.messages.map(m => <Message message={m.message}/>);
 	const newMessageBody = props.dialogsPage.newMessageBody;
-
-
-	// const onSendMessageClick = () => {
-	// 	props.sendMessage()
-	// }
-
-	// const onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-	// 	let body = e.target.value;
-	// 	props.updateNewMessageBody(body);
-	// }
 
 	const onNewMessage = (values: any) => {
 		props.sendMessage(values.newMessageBody);
@@ -43,8 +33,7 @@ const Dialogs = (props: DialogsPropsType) => {
 }
 
 type AddMessageFormPropsType = {
-	newMessageBody: string
-	// onNewMessage: (values: string) => void
+	// newMessageBody: string
 }
 
 const AddMessageForm: React.FC<InjectedFormProps<AddMessageFormPropsType>> = (props) => {
@@ -53,7 +42,7 @@ const AddMessageForm: React.FC<InjectedFormProps<AddMessageFormPropsType>> = (pr
 			<div>
 				<div><Field component={'textarea'} name={'newMessageBody'} placeholder="Enter your message"/></div>
 				<div>
-					<button> Sent</button>
+					<button> Sent </button>
 				</div>
 			</div>
 		</form>

@@ -1,10 +1,6 @@
 import {ProfileInfoType, UserType} from './types';
-import {changeNewTextAC} from '../redux/profileReducer';
+// import {changeNewTextAC} from '../redux/profileReducer';
 import {sendMessageAC, } from '../redux/dialogsReducer';
-
-// export type SendMessageActionType = {
-//     type: 'SEND-MESSAGE'
-// }
 
 export type UpdateNewMessageBodyActionType = {
 	type: 'UPDATE-NEW-MESSAGE-BODY'
@@ -13,6 +9,7 @@ export type UpdateNewMessageBodyActionType = {
 
 export type AddPostActionType = {
 	type: 'ADD-POST'
+	newPostText: string
 }
 
 export type UpdateNewPostTextActionType = {
@@ -76,14 +73,10 @@ export type SetProfileStatusAT = {
 }
 
 export type ActionsTypes =
-// ReturnType<typeof addPostAC>
-	| ReturnType<typeof changeNewTextAC>
-	// | ReturnType<typeof updateNewMessageBodyAC>
+	// | ReturnType<typeof changeNewTextAC>
 	| ReturnType<typeof sendMessageAC>
-// | ReturnType<typeof setUserProfile>
-// | ReturnType<typeof setAuthUserData>
 
-export type DispatchActionsType = /*SendMessageActionType*/
+export type DispatchActionsType = 
 	| UpdateNewMessageBodyActionType
 	| AddPostActionType
 	| UpdateNewPostTextActionType

@@ -4,7 +4,7 @@ import {AppDispatchType} from './redux-store';
 import {profileAPI, usersAPI} from '../api/api';
 
 const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+// const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET-USER-PROFILE';
 const SET_STATUS = 'SET-STATUS';
 
@@ -14,7 +14,7 @@ let initialState = {
 		{id: 2, message: 'It\'s my first post', likesCount: 15},
 		{id: 3, message: 'yo yo yo', likesCount: 17},
 	] as Array<PostItemType>,
-	newPostText: 'it-kamasutra.com',
+	// newPostText: 'it-kamasutra.com',
 	profile: null,
 	status: ''
 };
@@ -24,27 +24,24 @@ export type initialStateType = typeof initialState
 // const profileReducer = (state: initialStateType = initialState, action: ActionsTypes): initialStateType => {
 const profileReducer = (state: ProfilePageDataType = initialState, action: DispatchActionsType) => {
 	switch (action.type) {
-		case 'UPDATE-NEW-POST-TEXT': {
-			return {
-				...state,
-				newPostText: action.newText
-			}
-		}
+		// case 'UPDATE-NEW-POST-TEXT': {
+		// 	return {
+		// 		...state,
+		// 		newPostText: action.newText
+		// 	}
+		// }
 		case 'ADD-POST': { // block structure so we can name stateCopy with same name in all cases
 			const newPost: PostItemType = {
 				id: 5,
-				message: state.newPostText,
+				message: action.newPostText,
 				likesCount: 0
 			};
-			if (newPost.message.trim() !== '') {
 				return {
 					...state,
 					postsData: [newPost, ...state.postsData],
 					newPostText: ''
 				}
-			} else {
-				return state
-			}
+			
 		}
 		case 'SET-USER-PROFILE': {
 			return {...state, profile: action.profileInfo}
@@ -98,12 +95,12 @@ export const getStatusTC = (id: string) => (dispatch: AppDispatchType) => {
 		});
 }
 
-export const changeNewTextAC = (newText: string) => {
-	return {
-		type: UPDATE_NEW_POST_TEXT,
-		newText: newText
-	} as const
-}
+// export const changeNewTextAC = (newText: string) => {
+// 	return {
+// 		type: UPDATE_NEW_POST_TEXT,
+// 		newText: newText
+// 	} as const
+// }
 
 export const updateStatusTC = (statusText: string) => (dispatch: AppDispatchType) => {
 	profileAPI.updateStatus(statusText)
