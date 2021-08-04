@@ -5,7 +5,7 @@
 
 .pages {
     display: flex;
-    width: 70vw;
+    width: 75vw;
     overflow-y: auto;
 
 }

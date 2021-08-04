@@ -18,8 +18,9 @@ export type MessagesType = {
 export type DialogsPropsType = {
 	// state: initialStateType
 	// appPost: (text: string) => void
+	// onNewMessage: (values: string) => void
 	updateNewMessageBody: (body: string) => void
-	sendMessage: () => void
+	sendMessage: (values: string) => void
 	dialogsPage: MessagesPageType
 	isAuth: boolean
 }

@@ -11,7 +11,7 @@ img {
 }
 @media screen and (max-width: 645px) {
     .postsBlock {
-        margin: 40px auto 0;
+        margin: 100px auto 0;
         display: block;
         text-align: center
     }
