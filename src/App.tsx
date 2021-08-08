@@ -11,8 +11,15 @@ import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import {HeaderContainer} from './components/Header/HeaderContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
-import Login  from './components/Login/Login';
+import {LoginPage} from './components/Login/Login';
 
+export const path = {
+	PROFILE: '/profile',
+	DIALOGS: '/dialogs',
+	CHAT: '/chat',
+	DEVELOPERS: '/developers',
+	LOGIN: '/login',
+}
 export type AppPropsType = {}
 
 const App: React.FC<AppPropsType> = (props) => {
@@ -30,7 +37,7 @@ const App: React.FC<AppPropsType> = (props) => {
 				<Route path={'/users'}
 					   render={() => <UsersContainer/>}/>
 				<Route path={'/login'}
-					   render={() => <Login/>}/>
+					   render={() => <LoginPage/>}/>
 				<Route path={'/news'} render={() => <News/>}/>
 				<Route path={'/music'} render={() => <Music/>}/>
 				<Route path={'/setting'} render={() => <Setting/>}/>

@@ -75,7 +75,7 @@ export const Users = (props: UsersPropsType) => {
 			<span className={styles.cont}>
                     <span>
                         <div>{u.name}</div>
-                        <div>{u.uniqueUrlName}</div>
+                        <div>{u.status}</div>
                     </span>
                     <span>
                         <div>{'u.location.country'}</div>

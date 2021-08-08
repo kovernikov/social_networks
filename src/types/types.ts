@@ -47,35 +47,34 @@ export type SitebarType = {
 	friends: Array<FriendsType>
 	icon: Array<IconsType>
 }
+export type ContactType = {
+	github: string
+	vk: string
+	facebook: string
+	instagram: string
+	twitter: string
+	website: string
+	youtube: string
+	mainLink: string
+}
 export type ProfileInfoType = {
-	userId: number | string
+	userId: number
 	lookingForAJob: boolean
 	lookingForAJobDescription: string
 	fullName: string
-	contacts: {
-		github: string
-		vk: string
-		facebook: string
-		instagram: string
-		twitter: string
-		website: string
-		youtube: string
-		mainLink: string
-	}
-	photos: {
-		small: string | null
-		large: string | null
-	}
+	contacts: ContactType
+	aboutMe: string
+	photos: PhotosType
+}
+export type PhotosType = {
+	small: string | null
+	large: string | null
 }
 export type UserType = {
-	name: string
 	id: number
-	uniqueUrlName: string | null
-	photos: {
-		small: string | null
-		large: string | null
-	}
-	status: string | null
+	name: string
+	status: string
+	photos: PhotosType
 	followed: boolean
 }
 export type UsersPageDataType = {

@@ -73,7 +73,7 @@ const setStatus = (status: string): SetProfileStatusAT => {
 export const getUserProfileTC = (id: string) => (dispatch: AppDispatchType) => {
 	let userId: string;
 	id ? userId = id : userId = '17771';
-	usersAPI.getProfile(userId)
+	profileAPI.getProfile(userId)
 		.then(response => {
 			dispatch(setUserProfile(response))
 		});

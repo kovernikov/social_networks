@@ -53,10 +53,12 @@ export type SetUserProfileAT = {
 
 export type SetUserDataAT = {
 	type: 'SET-USER-DATA',
-	data: {
+	payload: {
 		id: number,
 		login: string,
 		email: string,
+		isAuth: boolean
+		captcha: string | null
 	}
 }
 

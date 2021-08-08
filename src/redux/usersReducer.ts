@@ -13,13 +13,20 @@ import {UsersPageDataType, UserType} from '../types/types';
 import {AppDispatchType} from './redux-store';
 
 const initialState = {
-	items: [],
-	pageSize: 9,
-	totalUsersCount: 10,
-	currentPage: 1,
+	items: [] as UserType[],
+	pageSize: 10,
+	totalUsersCount: 0,
+	currentPage: 555,
 	isFetching: false,
-	followingInProgress: []
+	followingInProgress: [] as number[], //array of users id
+	filter: {
+		term: '',
+		friend: null as null | boolean
+	}
 }
+
+export type FilterType = typeof initialState.filter
+
 
 export const usersReducer = (state: UsersPageDataType = initialState, action: DispatchActionsType): UsersPageDataType => {
 	switch (action.type) {
