@@ -1,0 +1,23 @@
+.formControl {
+    display: flex;
+    flex-direction: column;
+}
+.formControl .childrenWrapperStyle {
+    display: grid;
+    justify-content: start;
+}
+.formControl.error span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 10px;
+    color: red;
+    font-size: 12px;
+}
+@media screen and (max-width: 645px){
+    .formControl .childrenWrapperStyle {
+        display: grid;
+        justify-content: center;
+    }
+}

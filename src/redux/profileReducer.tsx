@@ -4,7 +4,6 @@ import {AppDispatchType} from './redux-store';
 import {profileAPI, usersAPI} from '../api/api';
 
 const ADD_POST = 'ADD-POST';
-// const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET-USER-PROFILE';
 const SET_STATUS = 'SET-STATUS';
 
@@ -24,24 +23,18 @@ export type initialStateType = typeof initialState
 // const profileReducer = (state: initialStateType = initialState, action: ActionsTypes): initialStateType => {
 const profileReducer = (state: ProfilePageDataType = initialState, action: DispatchActionsType) => {
 	switch (action.type) {
-		// case 'UPDATE-NEW-POST-TEXT': {
-		// 	return {
-		// 		...state,
-		// 		newPostText: action.newText
-		// 	}
-		// }
 		case 'ADD-POST': { // block structure so we can name stateCopy with same name in all cases
 			const newPost: PostItemType = {
 				id: 5,
 				message: action.newPostText,
 				likesCount: 0
 			};
-				return {
-					...state,
-					postsData: [newPost, ...state.postsData],
-					newPostText: ''
-				}
-			
+			return {
+				...state,
+				postsData: [newPost, ...state.postsData],
+				newPostText: ''
+			}
+
 		}
 		case 'SET-USER-PROFILE': {
 			return {...state, profile: action.profileInfo}
@@ -66,7 +59,7 @@ export const addPostAC = (newPostText: string) => {
 }
 const setUserProfile = (profile: ProfileInfoType): SetUserProfileAT => {
 	return {
-		type: SET_USER_PROFILE,
+		type: 'SET-USER-PROFILE',
 		profileInfo: profile
 	} as const
 }
@@ -94,13 +87,6 @@ export const getStatusTC = (id: string) => (dispatch: AppDispatchType) => {
 			dispatch(setStatus(response.data))
 		});
 }
-
-// export const changeNewTextAC = (newText: string) => {
-// 	return {
-// 		type: UPDATE_NEW_POST_TEXT,
-// 		newText: newText
-// 	} as const
-// }
 
 export const updateStatusTC = (statusText: string) => (dispatch: AppDispatchType) => {
 	profileAPI.updateStatus(statusText)

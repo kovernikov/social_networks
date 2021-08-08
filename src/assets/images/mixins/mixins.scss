@@ -1,0 +1,15 @@
+@mixin display($display,$j-content:none,$a-items:none,$wrap:nowrap,$f-der:none) {
+  display: $display;
+  justify-content: $j-content;
+  align-items: $a-items;
+  flex-wrap: $wrap;
+  flex-direction: $f-der;
+}
+
+@mixin position($position,$t:none,$r:none,$b:none,$l:none) {
+  position: $position;
+  top: $t;
+  right: $r;
+  bottom:$b;
+  left: $l;
+}

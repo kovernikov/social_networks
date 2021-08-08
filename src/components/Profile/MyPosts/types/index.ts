@@ -9,7 +9,6 @@ export type MapStateToPropsType = {
 
 export type MapDispatchToPropsType = {
 	addPost: (values: string) => void
-	// onPostChange: (text: string) => void
 }
 
 export type MyPostType = MapStateToPropsType & MapDispatchToPropsType
