@@ -11,25 +11,54 @@ import {withAuthRedirect} from '../../hok/witthAuthRedirect';
 import {compose} from 'redux';
 
 class ProfileContainer extends React.Component<ProfileContainerWithRoutePropsType> {
-	componentDidMount() {
+
+	updateProfile() {
+		let id = +this.props.match.params.userId
+		let userId: number | null = id ? id : this.props.authorizedUserId
+		if (!userId) {
+			//todo:replace push redirect
+			this.props.history.push('/login')
+		}
 		this.props.getUserProfileTC(this.props.match.params.userId)
 		this.props.getStatusTC(this.props.match.params.userId)
+
+	}
+
+	componentDidMount() {
+		this.updateProfile()
 	}
 
 	render() {
 		return (
 			<div>
-				<Profile profile={this.props.profile} status={this.props.status}
+				<Profile profile={this.props.profile}
+						 status={this.props.status}
 						 updateStatus={this.props.updateStatusTC}/>
 			</div>
 		)
 	}
 }
 
-let mapStateToProps = (state: AppStateType) => {
+type MapDispatchType = {
+	getUserProfileData: (userId: number) => void
+	getStatusFromUser: (userId: number) => void
+	updateOwnProfileStatus: (status: string) => void
+	savePhoto: (photo: File) => void
+	saveProfileData: (profile: ProfileInfoType) => void
+}
+type MapStateType = {
+	profile: ProfileInfoType | null
+	status: string
+	authorizedUserId: number | null
+	isAuth: boolean
+}
+
+let mapStateToProps = (state: AppStateType): MapStateType => {
 	return {
 		profile: state.profilePage.profile,
-		status: state.profilePage.status
+		status: state.profilePage.status,
+		authorizedUserId: state.authData.id,
+		isAuth: state.authData.isAuth
 	}
 }
 

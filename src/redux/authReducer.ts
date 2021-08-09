@@ -3,7 +3,7 @@ import {DispatchActionsType, SetUserDataAT} from '../types/dispatchTypes';
 import {AppDispatchType, AppStateType, BaseThunkType, InferActionsTypes} from './redux-store';
 import {authAPI, usersAPI} from '../api/api';
 import {ThunkDispatch} from 'redux-thunk';
-import {FormAction} from 'redux-form';
+import {FormAction, stopSubmit} from 'redux-form';
 
 let initialState = {
 	id: null as (number | null),
@@ -53,8 +53,10 @@ export const login = (email: string, password: string, rememberMe: boolean, capt
 	await authAPI.login(email, password, rememberMe, captcha)
 		.then(response => {
 			if (response.resultCode === 0) {
-
 				dispatch(getAuthUserData())
+			}else {
+				const message = response.messages.length > 0 ? response.messages[0] : 'Some error';
+				dispatch(stopSubmit('login', {_error: message}))
 			}
 		});
 }

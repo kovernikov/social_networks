@@ -16,9 +16,13 @@ type FormDataType = {
 }
 
 const LoginForm: React.FC<InjectedFormProps<LoginFormValuesType,
-	LoginFormOwnProps> & LoginFormOwnProps> = (props) => {
+	LoginFormOwnProps> & LoginFormOwnProps> = ({
+	handleSubmit,
+	error,
+	captchaUrl
+}) => {
 	return (
-		<form onSubmit={props.handleSubmit} className={s.form}>
+		<form onSubmit={handleSubmit} className={s.form}>
 
 			<div className={s.testData}>
 				<p>Use test data</p>
@@ -38,7 +42,7 @@ const LoginForm: React.FC<InjectedFormProps<LoginFormValuesType,
 			<div>
 				<button className={s.loginBtn}>Login</button>
 			</div>
-			{/*{error && <div className={s.formSummaryError}>{error}</div>}*/}
+			{error && <div className={s.formSummaryError}>{error}</div>}
 			<div>
 
 			</div>
