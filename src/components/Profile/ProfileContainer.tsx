@@ -70,5 +70,5 @@ type ProfileContainerWithRoutePropsType = RouteComponentProps<PathParamsType> & 
 export default compose<React.ComponentType>(
 	connector,
 	withRouter,
-	// withAuthRedirect
+	withAuthRedirect
 )(ProfileContainer)

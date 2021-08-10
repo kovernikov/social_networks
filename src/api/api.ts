@@ -18,7 +18,7 @@ export const usersAPI = {
 	},
 	unfollowUsers: (id: number) => {
 		return instance.delete(`follow/${id}`,)
-			.then(response => response.data.resultCode)
+			.then(response => response.data.resultCode) 
 	},
 	// getAuth: () => {
 	// 	console.warn('use authAPI')
@@ -36,12 +36,7 @@ export const authAPI = {
 			.then(res => res.data)
 	},
 	login(email: string, password: string, rememberMe: boolean = false, captcha: null | string = null) {
-		return instance.post<APIResponseType<LoginResponseDataType, ResultCodeCaptcha | ResultCodes>>(`auth/login`, {
-			email,
-			password,
-			rememberMe,
-			captcha
-		})
+		return instance.post<APIResponseType<LoginResponseDataType, ResultCodeCaptcha | ResultCodes>>(`auth/login`, {email, password, rememberMe, captcha})
 			.then(res => res.data)
 	},
 	logout() {

@@ -40,7 +40,7 @@ export const actions = {
 }
 
 export const getAuthUserData = (): ThunkType => async (dispatch: ThunkDispatch<AppStateType, unknown, ActionsType>) => {
-	await authAPI.me()
+	return await authAPI.me()
 		.then(response => {
 			if (response.resultCode === 0) {
 				let {id, login, email} = response.data
