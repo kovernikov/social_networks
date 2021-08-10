@@ -16,6 +16,7 @@ import {Users} from './Users';
 import {Preloader} from '../../common/Preloader/Preloader';
 import {withAuthRedirect} from '../../hok/witthAuthRedirect';
 import {compose} from 'redux';
+import {getTotalUsersCount, getUsers, getPageSize, getCurrentPage, getIsFetching, getFollowingInProgress, getUsersFilter } from '../../redux/users-selectors';
 
 
 // @ts-ignore
@@ -49,6 +50,13 @@ export class UsersContainer extends React.Component<UsersContainerProps> {
 const mapStateToProps = (state: AppStateType) => {
 	return {
 		usersPageData: state.usersPageData,
+		// items: getUsers(state),
+		// totalUsersCount: getTotalUsersCount(state),
+		// pageSize: getPageSize(state),
+		// currentPage: getCurrentPage(state),
+		// isFetching: getIsFetching(state),
+		// followingInProgress: getFollowingInProgress(state),
+		// usersFilter: getUsersFilter(state)
 	}
 }
 

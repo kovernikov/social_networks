@@ -1,5 +1,7 @@
 // import {DialogType, MessagesType} from '../redux/dialogsReducer';
 
+import { FilterType } from "../redux/usersReducer"
+
 export type DialogItemType = {
 	id: number
 	name: string
@@ -85,6 +87,7 @@ export type UsersPageDataType = {
 	totalCount?: number
 	isFetching: boolean
 	followingInProgress: number[];
+	filter: FilterType
 }
 export type AuthType = {
 	data:

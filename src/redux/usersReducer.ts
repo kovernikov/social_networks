@@ -82,11 +82,11 @@ export const setFollowingInProgress = (isFetching: boolean, userId: number): Set
 	return {type: 'SET-FOLLOWING-IN-PROGRESS', isFetching, userId}
 }
 
-export const getUsersThunkCreator = (currentPage: number, pageSize: number) => {
+export const getUsersThunkCreator = (page: number, pageSize: number) => {
 	return async (dispatch: AppDispatchType) => {
 		dispatch(toggleIsFetching(true));
-		dispatch(setCurrentPage(currentPage));
-		let data = await usersAPI.getUsers(currentPage, pageSize);
+		dispatch(setCurrentPage(page));
+		let data = await usersAPI.getUsers(page, pageSize);
 		dispatch(toggleIsFetching(false));
 		dispatch(setUsers(data.items));
 		dispatch(setTotalUserCount(data.totalCount));
