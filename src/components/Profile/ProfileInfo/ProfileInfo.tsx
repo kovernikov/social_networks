@@ -4,6 +4,7 @@ import {ProfileInfoType} from '../../../types/types';
 import userPhoto from '../../../assets/images/user.png'
 import ProfileStatus from './ProfileStatus'
 import {Preloader} from '../../../common/Preloader/Preloader';
+import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 
 type ProfileInfoPropsType = {
 	profile: ProfileInfoType | null
@@ -20,7 +21,7 @@ const ProfileInfo = (props: ProfileInfoPropsType) => {
 			<div>
 				<div className={s.descriptionBlock}>
 					<img src={props.profile?.photos.large ? props.profile.photos.large : userPhoto}/>
-					<ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+					<ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
 					<div>
 						<span>{props.profile?.fullName}</span>
 					</div>
