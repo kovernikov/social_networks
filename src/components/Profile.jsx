@@ -14,7 +14,7 @@ const Profile = () => {
             <div>
                 My posts
                 <div>
-                    New post
+                    New post!
                 </div>
                 <div>
                     <div>
