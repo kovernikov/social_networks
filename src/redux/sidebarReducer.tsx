@@ -1,4 +1,6 @@
-import {ActionsTypes, SitebarType} from './store';
+import {SitebarType} from '../types/types';
+import {ActionsTypes, DispatchActionsType} from '../types/dispatchTypes';
+
 
 let initialState = {
     friends: [
@@ -14,7 +16,7 @@ let initialState = {
     ]
 };
 
-const sidebarReducer = (state: SitebarType = initialState, action: ActionsTypes) => {
+const sidebarReducer = (state: SitebarType = initialState, action: DispatchActionsType) => {
 
     return state;
 }

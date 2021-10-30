@@ -2,28 +2,51 @@
     display: flex;
     margin: 10px;
 }
+
+.pages {
+    display: flex;
+    width: 75vw;
+    overflow-y: auto;
+
+}
+
 .photo {
     display: block;
     margin: 0 auto;
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
 }
+
 .cont {
     margin-left: 30px;
     display: flex;
     justify-content: space-between;
     border: blue 1px solid;
     border-radius: 7px;
-    width: 30%;
+    width: 80%;
 }
-.cont span{
+
+.cont span {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 5px;
 }
+
 .btn {
+    margin: 0 auto;
     height: 20px;
     width: 65px;
+}
+
+.selectedPage {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.imgs {
+    width: 60px;
+    height: 50px;
+    /*border-radius: 50%;*/
 }

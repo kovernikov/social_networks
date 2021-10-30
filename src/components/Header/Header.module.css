@@ -1,10 +1,25 @@
 .header {
     grid-area: h;
     background-color: green;
+    height: 100%;
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .header img {
     width: 40px;
+    height: 40px;
     margin: 10px;
 
 }
+.loginBlock {
+    line-height: 60px;
+    padding: 0 10px 0 ;
+}
+.loginBlock a {
+
+    color: white;
+}
+

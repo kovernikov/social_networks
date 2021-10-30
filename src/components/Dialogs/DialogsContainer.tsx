@@ -1,43 +1,38 @@
 import React from 'react';
-import {initialStateType, sendMessageAC, updateNewMessageBodyAC} from '../../redux/dialogsReducer';
+import {initialStateType, sendMessageAC} from '../../redux/dialogsReducer';
 import {connect} from 'react-redux';
 import {AppDispatchType, AppStateType} from '../../redux/redux-store';
 import Dialogs from './Dialogs';
+import {withAuthRedirect} from '../../hok/witthAuthRedirect';
+import {compose} from 'redux';
 
-
-// export type MessagesPageType = {
-//     dialogs: Array<DialogType>
-//     messages: Array<MessagesType>
-//     newMessageBody: string
-// }
 
 type MapStateToPropsType = {
-    dialogsPage: initialStateType
+	dialogsPage: initialStateType
 }
 
 type MapDispatchToPropsType = {
-    updateNewMessageBody: (body: string) => void
-    sendMessage: () => void
+	sendMessage: (newMessageBody: string) => void
 }
 
 const mapStateToProps = (state: AppStateType): MapStateToPropsType => {
-    return {
-        dialogsPage: state.dialogsPage /*state.dialogsPage*/
-    }
+	return {
+		dialogsPage: state.dialogsPage, /*state.dialogsPage*/
+	}
 }
 const mapDispatchToProps = (dispatch: AppDispatchType): MapDispatchToPropsType => {
-    return {
-        updateNewMessageBody: (body: string) => {
-
-            dispatch(updateNewMessageBodyAC(body))
-        },
-        sendMessage: () => {
-            dispatch(sendMessageAC())
-        }
-    }
+	return {
+		sendMessage: (newMessageBody: string) => {
+			dispatch(sendMessageAC(newMessageBody))
+		}
+	}
 }
 
 // @ts-ignore
-const DialogsContainer = connect (mapStateToProps, mapDispatchToProps) (Dialogs);
+// const DialogsContainer = withAuthRedirect (connect (mapStateToProps, mapDispatchToProps) (Dialogs));
 
-export default DialogsContainer;
+export default compose<React.ComponentType>(
+	connect(mapStateToProps, mapDispatchToProps),
+	withAuthRedirect
+)(Dialogs);
+

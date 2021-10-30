@@ -9,9 +9,9 @@ import store, {rootReducer} from './redux/redux-store';
 
 ReactDOM.render(
     <React.StrictMode>
-        <HashRouter>
+        <HashRouter >
             <Provider store={store}>
-                <App  />
+                <App />
             </Provider>
         </HashRouter>
     </React.StrictMode>,
