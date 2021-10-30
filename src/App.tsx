@@ -32,7 +32,6 @@ class App extends React.Component<AppPropsType> {
 		this.props.initializeApp()
 	}
 	
-	
 	render() {
 		// todo: const state = props.store.getState()
 		if(this.props.initialized) {
