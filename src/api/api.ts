@@ -20,6 +20,10 @@ export const usersAPI = {
 		return instance.delete(`follow/${id}`,)
 			.then(response => response.data.resultCode) 
 	},
+<<<<<<< HEAD
+=======
+	// getAuth: () => {
+>>>>>>> origin/main
 	// 	console.warn('use authAPI')
 	// 	return authAPI.getAuth()
 	// },

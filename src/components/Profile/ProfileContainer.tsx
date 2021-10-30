@@ -16,6 +16,10 @@ class ProfileContainer extends React.Component<ProfileContainerWithRoutePropsTyp
 		let id = +this.props.match.params.userId
 		let userId: number | null = id ? id : this.props.authorizedUserId
 		if (!userId) {
+<<<<<<< HEAD
+=======
+			//todo:replace push redirect
+>>>>>>> origin/main
 			this.props.history.push('/login')
 		}
 		this.props.getUserProfileTC(this.props.match.params.userId)
